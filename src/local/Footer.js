@@ -1,4 +1,4 @@
-const footer = () => {
+const Footer = () => {
   let d = new Date();
   return (
     <footer>
@@ -7,4 +7,4 @@ const footer = () => {
   )
 }
 
-export default footer
+export default Footer
