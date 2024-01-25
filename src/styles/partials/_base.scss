@@ -150,8 +150,16 @@
     display: flex;
     justify-content: space-around;
     p {
-      cursor: pointer;
+      display: block;
+      width: 130px;
+      color: #FB5;
       margin: 0 20px;
+      &:hover {
+        color: #FFF;
+      }
+    }
+    p:not(.noclick) {
+      cursor: pointer;
     }
   }
 

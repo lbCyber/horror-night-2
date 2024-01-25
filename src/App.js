@@ -113,6 +113,24 @@ const App = () => {
                 <h4>For every month for over five years, two best friends have gotten together to find a new horror-themed movie to review, with an eye for overlooked gems or overrated trash.</h4>
                 <h4>Explore the site to discover movies that might interest you! Everything is rated based on five criteria: Enjoyability, Success, Memorability, Recommendability, and Rewatchability. We'll also provide our post-movie discussion on what we thought of the film.</h4>
               </div>
+              <div className="pages">
+                {
+                  (page > 1) ?
+                    <p className="page clickable" onMouseDown={() => {
+                      setPage(page - 1)
+                      getList()
+                    }}>&lt; previous page</p>
+                    : (<p className="noclick"></p>)
+                }
+                {
+                  (page < 3) ?
+                    <p className="page clickable" onMouseDown={() => {
+                      setPage(page + 1)
+                      getList()
+                    }}>next page &gt;</p>
+                    : (<p className="noclick"></p>)
+                }
+              </div>
               <div className="movieGrid">
                 {
                   apiData.map((movie, key) => {
@@ -129,8 +147,8 @@ const App = () => {
                       setPage(page - 1)
                       window.scrollTo(0, 0)
                       getList()
-                    }}>previous page</p>
-                    : null
+                    }}>&lt; previous page</p>
+                    : (<p className="noclick"></p>)
                 }
                 {
                   (page < 3) ?
@@ -138,8 +156,8 @@ const App = () => {
                       setPage(page + 1)
                       window.scrollTo(0, 0)
                       getList()
-                    }}>next page</p>
-                    : null
+                    }}>next page &gt;</p>
+                    : (<p className="noclick"></p>)
                 }
               </div>
             </Route>
