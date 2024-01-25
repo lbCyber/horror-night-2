@@ -3,7 +3,7 @@ import axios from 'axios';
 import nl2br from 'react-newline-to-break';
 import { Link } from "react-router-dom";
 
-const Movie = (props) => {
+const Movie = ({moviePick, movieReviews, callback, backDrop, languages}) => {
 
   const [language, setLanguage] = useState(""),
         [video, setVideo] = useState(""),
@@ -12,16 +12,16 @@ const Movie = (props) => {
 
   useEffect(()=>{
     // Please random user, stop changing the language for one movie to Persian in en-US
-    const langCompare = (language) => language.iso_639_1 === props.moviePick.original_language;
-    const output = props.languages.find(langCompare);
+    const langCompare = (language) => language.iso_639_1 === moviePick.original_language;
+    const output = languages.find(langCompare);
     setLanguage(output["english_name"])
 
     axios({
-      url: `https://api.themoviedb.org/3/movie/${props.moviePick.id}/videos`,
+      url: `https://api.themoviedb.org/3/movie/${moviePick.id}/videos`,
       method: 'GET',
       dataType: 'json',
       headers: { Authorization: process.env.REACT_APP_API_AUTH },
-      language: `"${props.moviePick.original_language}"`
+      language: `"${moviePick.original_language}"`
     }).then(response => {
       const findYouTube = (v) => (v.site === "YouTube" && v.type === "Trailer")
       const youTubeTrailer = response.data.results.find(findYouTube)
@@ -33,11 +33,11 @@ const Movie = (props) => {
       }
     }).finally(() => {
       setTimeout(() => {
-        props.backDrop(`https://image.tmdb.org/t/p/w1280${props.moviePick.backdrop_path}`)
+        backDrop(`https://image.tmdb.org/t/p/w1280${moviePick.backdrop_path}`)
       }, 1100)
       window.scrollTo(0, 0)
     })
-  })
+  },[moviePick, setVideo, backDrop, languages])
 
   const blurbHover = (c, r = null) => {
     setHover(reviewBlurb[c])
@@ -81,20 +81,20 @@ const Movie = (props) => {
     <article className="moviePage">
       <div>
         <Link to="/" className="goBack clickable" onMouseDown={() => {
-          props.callback(null)
-          props.backDrop(null)
+          callback(null)
+          backDrop(null)
         }}>&gt; Return to the main menu</Link>
       </div>
       <section className="moviePageInfo">
-        <h2>{(props.moviePick.title === "زیر سایه") ? "Under the Shadow" : `${props.moviePick.title}`} ({props.moviePick.release_date.slice(0, 4)})</h2>
+        <h2>{(moviePick.title === "زیر سایه") ? "Under the Shadow" : `${moviePick.title}`} ({moviePick.release_date.slice(0, 4)})</h2>
         <div className="movieInfoContainer">
-          <img className="moviePagePoster" src={`https://image.tmdb.org/t/p/w600_and_h900_bestv2/${props.moviePick.poster_path}`} alt={`Movie poster for ${props.moviePick.title}`} />
-          <iframe className="trailer" title={`Trailer for ${props.moviePick.title}`} src={`https://www.youtube-nocookie.com/embed/${video}`} frameBorder="0" allow="accelerometer; encrypted-media; gyroscope; picture-in-picture" allowFullScreen={true} modestbranding="true"></iframe>
+          <img className="moviePagePoster" src={`https://image.tmdb.org/t/p/w600_and_h900_bestv2/${moviePick.poster_path}`} alt={`Movie poster for ${moviePick.title}`} />
+          <iframe className="trailer" title={`Trailer for ${moviePick.title}`} src={`https://www.youtube-nocookie.com/embed/${video}`} frameBorder="0" allow="accelerometer; encrypted-media; gyroscope; picture-in-picture" allowFullScreen={true} modestbranding="true"></iframe>
           <div className="deetTopInfo movieDeets">
             <p><span className="deetHeader">Language: </span> {language}</p>
-            <p><span className="deetHeader"><a href={`https://www.themoviedb.org/movie/${props.moviePick.id}`} target="_blank" rel="noopener noreferrer">TMDB Rating:</a> </span> {props.moviePick.vote_average} ({props.moviePick.vote_count} votes)</p>
+            <p><span className="deetHeader"><a href={`https://www.themoviedb.org/movie/${moviePick.id}`} target="_blank" rel="noopener noreferrer">TMDB Rating:</a> </span> {moviePick.vote_average} ({moviePick.vote_count} votes)</p>
           </div>
-          <div className="movieOverview movieDeets"><p className="deetHeader overviewHeader">Overview: </p> <p className="overviewText">{props.moviePick.overview}</p></div>
+          <div className="movieOverview movieDeets"><p className="deetHeader overviewHeader">Overview: </p> <p className="overviewText">{moviePick.overview}</p></div>
         </div>
       </section>
       <section className="pkReviews">
@@ -103,23 +103,23 @@ const Movie = (props) => {
             <h4>Paul:</h4>
             <ul>
               <li onMouseOver={() => { blurbHover(0, "Paul") }} onMouseLeave={() => { blurbHover(null) }}>
-                {(props.movieReviews.reviews.Paul.Enjoyable) ? <img src="./assets/yes.png" alt={`Paul found the movie enjoyable`} /> : <img src="./assets/no.png" alt={`Paul didn't find the movie enjoyable`} />}
+                {(movieReviews.reviews.Paul.Enjoyable) ? <img src="./assets/yes.png" alt={`Paul found the movie enjoyable`} /> : <img src="./assets/no.png" alt={`Paul didn't find the movie enjoyable`} />}
                 <h6>Enjoyable</h6>
               </li>
               <li onMouseOver={() => { blurbHover(1, "Paul") }} onMouseLeave={() => { blurbHover(null) }}>
-                {(props.movieReviews.reviews.Paul.Successful) ? <img src="./assets/yes.png" alt={`Paul found the movie successful`} /> : <img src="./assets/no.png" alt={`Paul didn't find the movie successful`} />}
+                {(movieReviews.reviews.Paul.Successful) ? <img src="./assets/yes.png" alt={`Paul found the movie successful`} /> : <img src="./assets/no.png" alt={`Paul didn't find the movie successful`} />}
               <h6>Successful</h6>
               </li>
               <li onMouseOver={() => { blurbHover(2, "Paul") }} onMouseLeave={() => { blurbHover(null) }}>
-                {(props.movieReviews.reviews.Paul.Memorable) ? <img src="./assets/yes.png" alt={`Paul found the movie memorable`} /> : <img src="./assets/no.png" alt={`Paul didn't find the movie memorable`} />}
+                {(movieReviews.reviews.Paul.Memorable) ? <img src="./assets/yes.png" alt={`Paul found the movie memorable`} /> : <img src="./assets/no.png" alt={`Paul didn't find the movie memorable`} />}
               <h6>Memorable</h6>
               </li>
               <li onMouseOver={() => { blurbHover(3, "Paul") }} onMouseLeave={() => { blurbHover(null) }}>
-                {(props.movieReviews.reviews.Paul.Recommendable) ? <img src="./assets/yes.png" alt={`Paul found the movie recommendable`} /> : <img src="./assets/no.png" alt={`Paul didn't find the movie recommendable`} />}
+                {(movieReviews.reviews.Paul.Recommendable) ? <img src="./assets/yes.png" alt={`Paul found the movie recommendable`} /> : <img src="./assets/no.png" alt={`Paul didn't find the movie recommendable`} />}
               <h6>Recommended</h6>
               </li>
               <li onMouseOver={() => { blurbHover(4, "Paul") }} onMouseLeave={() => { blurbHover(null) }}>
-                {(props.movieReviews.reviews.Paul.Rewatchable) ? <img src="./assets/yes.png" alt={`Paul found the movie rewatchable`} /> : <img src="./assets/no.png" alt={`Paul didn't find the movie rewatchable`} />}
+                {(movieReviews.reviews.Paul.Rewatchable) ? <img src="./assets/yes.png" alt={`Paul found the movie rewatchable`} /> : <img src="./assets/no.png" alt={`Paul didn't find the movie rewatchable`} />}
               <h6>Rewatchable</h6>
               </li>
             </ul>
@@ -128,23 +128,23 @@ const Movie = (props) => {
             <h4>Kyle:</h4>
             <ul>
               <li onMouseOver={() => { blurbHover(0, "Kyle") }} onMouseLeave={() => { blurbHover(null) }}>
-                {(props.movieReviews.reviews.Kyle.Enjoyable) ? <img src="./assets/yes.png" alt={`Kyle found the movie enjoyable`} /> : <img src="./assets/no.png" alt={`Kyle didn't find the movie enjoyable`} />}
+                {(movieReviews.reviews.Kyle.Enjoyable) ? <img src="./assets/yes.png" alt={`Kyle found the movie enjoyable`} /> : <img src="./assets/no.png" alt={`Kyle didn't find the movie enjoyable`} />}
               <h6>Enjoyable</h6>
               </li>
               <li onMouseOver={() => { blurbHover(1, "Kyle") }} onMouseLeave={() => { blurbHover(null) }}>
-                {(props.movieReviews.reviews.Kyle.Successful) ? <img src="./assets/yes.png" alt={`Kyle found the movie successful`} /> : <img src="./assets/no.png" alt={`Kyle didn't find the movie successful`} />}
+                {(movieReviews.reviews.Kyle.Successful) ? <img src="./assets/yes.png" alt={`Kyle found the movie successful`} /> : <img src="./assets/no.png" alt={`Kyle didn't find the movie successful`} />}
               <h6>Successful</h6>
               </li>
               <li onMouseOver={() => { blurbHover(2, "Kyle") }} onMouseLeave={() => { blurbHover(null) }}>
-                {(props.movieReviews.reviews.Kyle.Memorable) ? <img src="./assets/yes.png" alt={`Kyle found the movie memorable`} /> : <img src="./assets/no.png" alt={`Kyle didn't find the movie memorable`} />}
+                {(movieReviews.reviews.Kyle.Memorable) ? <img src="./assets/yes.png" alt={`Kyle found the movie memorable`} /> : <img src="./assets/no.png" alt={`Kyle didn't find the movie memorable`} />}
               <h6>Memorable</h6>
               </li>
               <li onMouseOver={() => { blurbHover(3, "Kyle") }} onMouseLeave={() => { blurbHover(null) }}>
-                {(props.movieReviews.reviews.Kyle.Recommendable) ? <img src="./assets/yes.png" alt={`Kyle found the movie recommendable`} /> : <img src="./assets/no.png" alt={`Kyle didn't find the movie recommendable`} />}
+                {(movieReviews.reviews.Kyle.Recommendable) ? <img src="./assets/yes.png" alt={`Kyle found the movie recommendable`} /> : <img src="./assets/no.png" alt={`Kyle didn't find the movie recommendable`} />}
               <h6>Recommended</h6>
               </li>
               <li onMouseOver={() => { blurbHover(4, "Kyle") }} onMouseLeave={() => { blurbHover(null) }}>
-                {(props.movieReviews.reviews.Kyle.Rewatchable) ? <img src="./assets/yes.png" alt={`Kyle found the movie rewatchable`} /> : <img src="./assets/no.png" alt={`Kyle didn't find the movie rewatchable`} />}
+                {(movieReviews.reviews.Kyle.Rewatchable) ? <img src="./assets/yes.png" alt={`Kyle found the movie rewatchable`} /> : <img src="./assets/no.png" alt={`Kyle didn't find the movie rewatchable`} />}
               <h6>Rewatchable</h6>
               </li>
             </ul>
@@ -155,9 +155,9 @@ const Movie = (props) => {
             <div className="reviewToolTipContent hoverToolTip" aria-hidden>
               <h5>{hover["criteria"]}</h5>
               <p>{nl2br(hover["blurb"])}</p>
-              {(props.movieReviews.reviews[hoverReviewer][hover["keyName"]]) ?
-                <p className="green">{hoverReviewer} found {props.moviePick.title} {hover["criteriaShort"]}</p>
-                : <p className="red">{hoverReviewer} did not find {props.moviePick.title} {hover["criteriaShort"]}</p>
+              {(movieReviews.reviews[hoverReviewer][hover["keyName"]]) ?
+                <p className="green">{hoverReviewer} found {moviePick.title} {hover["criteriaShort"]}</p>
+                : <p className="red">{hoverReviewer} did not find {moviePick.title} {hover["criteriaShort"]}</p>
               }
             </div>
             : null}
@@ -176,8 +176,8 @@ const Movie = (props) => {
       </section>
       <div>
         <Link to="/" className="goBack clickable" onMouseDown={() => {
-          props.callback(null)
-          props.backDrop(null)
+          callback(null)
+          backDrop(null)
         }}>&gt; Return to the main menu</Link>
       </div>
     </article>

@@ -1,13 +1,13 @@
 import { Link } from 'react-router-dom';
 
-const Header = () => {
+const Header = ({callback, backDrop}) => {
   return (
     <header>
       <h1 className="clickable" onMouseDown={() => {
-        this.props.callback(null)
-        this.props.backDrop(null)
+        callback(null)
+        backDrop(null)
       }}>
-        <Link class="headerText" to="/">Paul and Kyle's <wbr />horror movie list</Link>
+        <Link className="headerText" to="/">Paul and Kyle's <wbr />horror movie list</Link>
       </h1>
     </header>
   )
