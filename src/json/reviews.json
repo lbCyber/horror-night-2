@@ -1,0 +1,1422 @@
+[
+  {
+    "id": 485510,
+    "title": "6-5=2",
+    "reviews": {
+      "Paul": {
+        "Enjoyable": false,
+        "Successful": false,
+        "Memorable": false,
+        "Recommendable": false,
+        "Rewatchable": false
+      },
+      "Kyle": {
+        "Enjoyable": false,
+        "Successful": false,
+        "Memorable": false,
+        "Recommendable": false,
+        "Rewatchable": false
+      }
+    }
+  },
+  {
+    "id": 409297,
+    "title": "A Dark Song",
+    "reviews": {
+      "Paul": {
+        "Enjoyable": true,
+        "Successful": true,
+        "Memorable": true,
+        "Recommendable": false,
+        "Rewatchable": false
+      },
+      "Kyle": {
+        "Enjoyable": true,
+        "Successful": true,
+        "Memorable": true,
+        "Recommendable": true,
+        "Rewatchable": false
+      }
+    }
+  },
+  {
+    "id": 447332,
+    "title": "A Quiet Place",
+    "reviews": {
+      "Paul": {
+        "Enjoyable": false,
+        "Successful": false,
+        "Memorable": true,
+        "Recommendable": false,
+        "Rewatchable": false
+      },
+      "Kyle": {
+        "Enjoyable": true,
+        "Successful": false,
+        "Memorable": true,
+        "Recommendable": true,
+        "Rewatchable": false
+      }
+    }
+  },
+  {
+    "id": 461928,
+    "title": "Anna and the Apocalypse",
+    "reviews": {
+      "Paul": {
+        "Enjoyable": true,
+        "Successful": true,
+        "Memorable": true,
+        "Recommendable": false,
+        "Rewatchable": false
+      },
+      "Kyle": {
+        "Enjoyable": true,
+        "Successful": true,
+        "Memorable": true,
+        "Recommendable": true,
+        "Rewatchable": false
+      }
+    }
+  },
+  {
+    "id": 346652,
+    "title": "Another WolfCop",
+    "reviews": {
+      "Paul": {
+        "Enjoyable": true,
+        "Successful": true,
+        "Memorable": true,
+        "Recommendable": true,
+        "Rewatchable": true
+      },
+      "Kyle": {
+        "Enjoyable": true,
+        "Successful": true,
+        "Memorable": true,
+        "Recommendable": true,
+        "Rewatchable": true
+      }
+    }
+  },
+  {
+    "id": 424121,
+    "title": "Apostle",
+    "reviews": {
+      "Paul": {
+        "Enjoyable": true,
+        "Successful": true,
+        "Memorable": false,
+        "Recommendable": false,
+        "Rewatchable": false
+      },
+      "Kyle": {
+        "Enjoyable": true,
+        "Successful": true,
+        "Memorable": false,
+        "Recommendable": true,
+        "Rewatchable": false
+      }
+    }
+  },
+  {
+    "id": 510284,
+    "title": "Braid",
+    "reviews": {
+      "Paul": {
+        "Enjoyable": false,
+        "Successful": true,
+        "Memorable": true,
+        "Recommendable": false,
+        "Rewatchable": false
+      },
+      "Kyle": {
+        "Enjoyable": false,
+        "Successful": false,
+        "Memorable": true,
+        "Recommendable": false,
+        "Rewatchable": false
+      }
+    }
+  },
+  {
+    "id": 521935,
+    "title": "Cam",
+    "reviews": {
+      "Paul": {
+        "Enjoyable": true,
+        "Successful": true,
+        "Memorable": true,
+        "Recommendable": false,
+        "Rewatchable": true
+      },
+      "Kyle": {
+        "Enjoyable": true,
+        "Successful": true,
+        "Memorable": true,
+        "Recommendable": true,
+        "Rewatchable": true
+      }
+    }
+  },
+  {
+    "id": 250574,
+    "title": "Creep",
+    "reviews": {
+      "Paul": {
+        "Enjoyable": true,
+        "Successful": true,
+        "Memorable": false,
+        "Recommendable": false,
+        "Rewatchable": false
+      },
+      "Kyle": {
+        "Enjoyable": true,
+        "Successful": true,
+        "Memorable": true,
+        "Recommendable": true,
+        "Rewatchable": false
+      }
+    }
+  },
+  {
+    "id": 396493,
+    "title": "Creep 2",
+    "reviews": {
+      "Paul": {
+        "Enjoyable": true,
+        "Successful": true,
+        "Memorable": false,
+        "Recommendable": false,
+        "Rewatchable": false
+      },
+      "Kyle": {
+        "Enjoyable": true,
+        "Successful": true,
+        "Memorable": false,
+        "Recommendable": false,
+        "Rewatchable": false
+      }
+    }
+  },
+  {
+    "id": 436973,
+    "original_title": "Dead Night",
+    "reviews": {
+      "Paul": {
+        "Enjoyable": false,
+        "Successful": true,
+        "Memorable": false,
+        "Recommendable": false,
+        "Rewatchable": false
+      },
+      "Kyle": {
+        "Enjoyable": false,
+        "Successful": true,
+        "Memorable": false,
+        "Recommendable": false,
+        "Rewatchable": false
+      }
+    }
+  },
+  {
+    "id": 474104,
+    "title": "Demon House",
+    "reviews": {
+      "Paul": {
+        "Enjoyable": true,
+        "Successful": false,
+        "Memorable":  true,
+        "Recommendable": false,
+        "Rewatchable": false
+      },
+      "Kyle": {
+        "Enjoyable": true,
+        "Successful": true,
+        "Memorable": true,
+        "Recommendable": true,
+        "Rewatchable": false
+      }
+    }
+  },
+  {
+    "id": 300669,
+    "title": "Don't Breathe",
+    "reviews": {
+      "Paul": {
+        "Enjoyable": false,
+        "Successful": false,
+        "Memorable": true,
+        "Recommendable": false,
+        "Rewatchable": false
+      },
+      "Kyle": {
+        "Enjoyable": true,
+        "Successful": true,
+        "Memorable": true,
+        "Recommendable": false,
+        "Rewatchable": false
+      }
+    }
+  },
+  {
+    "id": 343674,
+    "title": "Gerald's Game",
+    "reviews": {
+      "Paul": {
+        "Enjoyable": true,
+        "Successful": true,
+        "Memorable": true,
+        "Recommendable": true,
+        "Rewatchable": true
+      },
+      "Kyle": {
+        "Enjoyable": true,
+        "Successful": true,
+        "Memorable": true,
+        "Recommendable": true,
+        "Rewatchable": false
+      }
+    }
+  },
+  {
+    "id": 558742,
+    "original_title": "Ghost Light",
+    "reviews": {
+      "Paul": {
+        "Enjoyable": true,
+        "Successful": true,
+        "Memorable": false,
+        "Recommendable": false,
+        "Rewatchable": false
+      },
+      "Kyle": {
+        "Enjoyable": true,
+        "Successful": true,
+        "Memorable": true,
+        "Recommendable": false,
+        "Rewatchable": false
+      }
+    }
+  },
+  {
+    "id": 429417,
+    "title": "Ghost Stories",
+    "reviews": {
+      "Paul": {
+        "Enjoyable": true,
+        "Successful": true,
+        "Memorable": false,
+        "Recommendable": true,
+        "Rewatchable": false
+      },
+      "Kyle": {
+        "Enjoyable": true,
+        "Successful": true,
+        "Memorable": true,
+        "Recommendable": true,
+        "Rewatchable": true
+      }
+    }
+  },
+  {
+    "id": 508642,
+    "title": "Gonjiam: Haunted Asylum",
+    "reviews": {
+      "Paul": {
+        "Enjoyable": true,
+        "Successful": true,
+        "Memorable": false,
+        "Recommendable": false,
+        "Rewatchable": true
+      },
+      "Kyle": {
+        "Enjoyable": true,
+        "Successful": true,
+        "Memorable": true,
+        "Recommendable": true,
+        "Rewatchable": false
+      }
+    }
+  },
+  {
+    "id": 284303,
+    "title": "Goodnight Mommy",
+    "reviews": {
+      "Paul": {
+        "Enjoyable": false,
+        "Successful": false,
+        "Memorable": true,
+        "Recommendable": false,
+        "Rewatchable": false
+      },
+      "Kyle": {
+        "Enjoyable": false,
+        "Successful": true,
+        "Memorable": true,
+        "Recommendable": false,
+        "Rewatchable": false
+      }
+    }
+  },
+  {
+    "id": 313922,
+    "title": "Green Room",
+    "reviews": {
+      "Paul": {
+        "Enjoyable": true,
+        "Successful": true,
+        "Memorable": true,
+        "Recommendable": true,
+        "Rewatchable": true
+      },
+      "Kyle": {
+        "Enjoyable": true,
+        "Successful": true,
+        "Memorable": true,
+        "Recommendable": true,
+        "Rewatchable": true
+      }
+    }
+  },
+  {
+    "id": 279690,
+    "original_title": "He Never Died",
+    "reviews": {
+      "Paul": {
+        "Enjoyable": true,
+        "Successful": false,
+        "Memorable": true,
+        "Recommendable": false,
+        "Rewatchable": true
+      },
+      "Kyle": {
+        "Enjoyable": true,
+        "Successful": true,
+        "Memorable": true,
+        "Recommendable": true,
+        "Rewatchable": true
+      }
+    }
+  },
+  {
+    "id": 549935,
+    "title": "Head Count",
+    "reviews": {
+      "Paul": {
+        "Enjoyable": true,
+        "Successful": false,
+        "Memorable": false,
+        "Recommendable": false,
+        "Rewatchable": false
+      },
+      "Kyle": {
+        "Enjoyable": true,
+        "Successful": false,
+        "Memorable": true,
+        "Recommendable": false,
+        "Rewatchable": false
+      }
+    }
+  },
+  {
+    "id": 493922,
+    "title": "Hereditary",
+    "reviews": {
+      "Paul": {
+        "Enjoyable": true,
+        "Successful": true,
+        "Memorable": true,
+        "Recommendable": true,
+        "Rewatchable": false
+      },
+      "Kyle": {
+        "Enjoyable": true,
+        "Successful": true,
+        "Memorable": true,
+        "Recommendable": true,
+        "Rewatchable": false
+      }
+    }
+  },
+  {
+    "id": 376570,
+    "title": "Hush",
+    "reviews": {
+      "Paul": {
+        "Enjoyable": true,
+        "Successful": true,
+        "Memorable": true,
+        "Recommendable": true,
+        "Rewatchable": true
+      },
+      "Kyle": {
+        "Enjoyable": true,
+        "Successful": true,
+        "Memorable": true,
+        "Recommendable": true,
+        "Rewatchable": true
+      }
+    }
+  },
+  {
+    "id": 49797,
+    "title": "I Saw the Devil",
+    "reviews": {
+      "Paul": {
+        "Enjoyable": false,
+        "Successful": true,
+        "Memorable": true,
+        "Recommendable": false,
+        "Rewatchable": false
+      },
+      "Kyle": {
+        "Enjoyable": true,
+        "Successful": true,
+        "Memorable": false,
+        "Recommendable": false,
+        "Rewatchable": false
+      }
+    }
+  },
+  {
+    "id": 418078,
+    "title": "It Comes at Night",
+    "reviews": {
+      "Paul": {
+        "Enjoyable": false,
+        "Successful": false,
+        "Memorable": true,
+        "Recommendable": false,
+        "Rewatchable": false
+      },
+      "Kyle": {
+        "Enjoyable": false,
+        "Successful": false,
+        "Memorable": false,
+        "Recommendable": false,
+        "Rewatchable": false
+      }
+    }
+  },
+  {
+    "id": 270303,
+    "title": "It Follows",
+    "reviews": {
+      "Paul": {
+        "Enjoyable": true,
+        "Successful": true,
+        "Memorable": true,
+        "Recommendable": true,
+        "Rewatchable": false
+      },
+      "Kyle": {
+        "Enjoyable": true,
+        "Successful": true,
+        "Memorable": true,
+        "Recommendable": true,
+        "Rewatchable": false
+      }
+    }
+  },
+  {
+    "id": 27374,
+    "title": "Lake Mungo",
+    "reviews": {
+      "Paul": {
+        "Enjoyable": true,
+        "Successful": true,
+        "Memorable": true,
+        "Recommendable": true,
+        "Rewatchable": true
+      },
+      "Kyle": {
+        "Enjoyable": true,
+        "Successful": true,
+        "Memorable": true,
+        "Recommendable": true,
+        "Rewatchable": false
+      }
+    }
+  },
+  {
+    "id": 395992,
+    "title": "Life",
+    "reviews": {
+      "Paul": {
+        "Enjoyable": true,
+        "Successful": false,
+        "Memorable": true,
+        "Recommendable": false,
+        "Rewatchable": false
+      },
+      "Kyle": {
+        "Enjoyable": true,
+        "Successful": true,
+        "Memorable": true,
+        "Recommendable": true,
+        "Rewatchable": false
+      }
+    }
+  },
+  {
+    "id": 345911,
+    "title": "Lights Out",
+    "reviews": {
+      "Paul": {
+        "Enjoyable": true,
+        "Successful": true,
+        "Memorable": false,
+        "Recommendable": false,
+        "Rewatchable": false
+      },
+      "Kyle": {
+        "Enjoyable": true,
+        "Successful": true,
+        "Memorable": false,
+        "Recommendable": true,
+        "Rewatchable": false
+      }
+    }
+  },
+  {
+    "id": 132232,
+    "title": "Mama",
+    "reviews": {
+      "Paul": {
+        "Enjoyable": true,
+        "Successful": true,
+        "Memorable": false,
+        "Recommendable": true,
+        "Rewatchable": false
+      },
+      "Kyle": {
+        "Enjoyable": true,
+        "Successful": true,
+        "Memorable": false,
+        "Recommendable": true,
+        "Rewatchable": false
+      }
+    }
+  },
+  {
+    "id": 429733,
+    "title": "Mayhem",
+    "reviews": {
+      "Paul": {
+        "Enjoyable": true,
+        "Successful": true,
+        "Memorable": true,
+        "Recommendable": true,
+        "Rewatchable": true
+      },
+      "Kyle": {
+        "Enjoyable": true,
+        "Successful": true,
+        "Memorable": true,
+        "Recommendable": true,
+        "Rewatchable": true
+      }
+    }
+  },
+  {
+    "id": 157547,
+    "title": "Oculus",
+    "reviews": {
+      "Paul": {
+        "Enjoyable": true,
+        "Successful": true,
+        "Memorable": true,
+        "Recommendable": true,
+        "Rewatchable": false
+      },
+      "Kyle": {
+        "Enjoyable": true,
+        "Successful": true,
+        "Memorable": true,
+        "Recommendable": true,
+        "Rewatchable": false
+      }
+    }
+  },
+  {
+    "id": 242512,
+    "title": "Ouija",
+    "reviews": {
+      "Paul": {
+        "Enjoyable": false,
+        "Successful": true,
+        "Memorable": false,
+        "Recommendable": false,
+        "Rewatchable": false
+      },
+      "Kyle": {
+        "Enjoyable": true,
+        "Successful": true,
+        "Memorable": false,
+        "Recommendable": true,
+        "Rewatchable": false
+      }
+    }
+  },
+  {
+    "id": 335796,
+    "title": "Ouija: Origin of Evil",
+    "reviews": {
+      "Paul": {
+        "Enjoyable": true,
+        "Successful": true,
+        "Memorable": false,
+        "Recommendable": false,
+        "Rewatchable": false
+      },
+      "Kyle": {
+        "Enjoyable": true,
+        "Successful": true,
+        "Memorable": false,
+        "Recommendable": false,
+        "Rewatchable": false
+      }
+    }
+  },
+  {
+    "id": 472269,
+    "title": "Possum",
+    "reviews": {
+      "Paul": {
+        "Enjoyable": false,
+        "Successful": true,
+        "Memorable": true,
+        "Recommendable": false,
+        "Rewatchable": false
+      },
+      "Kyle": {
+        "Enjoyable": false,
+        "Successful": true,
+        "Memorable": true,
+        "Recommendable": false,
+        "Rewatchable": false
+      }
+    }
+  },
+  {
+    "id": 27324,
+    "title": "Pulse",
+    "reviews": {
+      "Paul": {
+        "Enjoyable": false,
+        "Successful": false,
+        "Memorable": false,
+        "Recommendable": false,
+        "Rewatchable": false
+      },
+      "Kyle": {
+        "Enjoyable": false,
+        "Successful": false,
+        "Memorable": false,
+        "Recommendable": false,
+        "Rewatchable": false
+      }
+    }
+  },
+  {
+    "id": 354251,
+    "title": "Southbound",
+    "reviews": {
+      "Paul": {
+        "Enjoyable": true,
+        "Successful": false,
+        "Memorable": true,
+        "Recommendable": false,
+        "Rewatchable": true
+      },
+      "Kyle": {
+        "Enjoyable": true,
+        "Successful": false,
+        "Memorable": true,
+        "Recommendable": false,
+        "Rewatchable": false
+      }
+    }
+  },
+  {
+    "id": 241855,
+    "title": "Spring",
+    "reviews": {
+      "Paul": {
+        "Enjoyable": true,
+        "Successful": true,
+        "Memorable": false,
+        "Recommendable": false,
+        "Rewatchable": false
+      },
+      "Kyle": {
+        "Enjoyable": true,
+        "Successful": true,
+        "Memorable": true,
+        "Recommendable": false,
+        "Rewatchable": false
+      }
+    }
+  },
+  {
+    "id": 542713,
+    "title": "Starfish",
+    "reviews": {
+      "Paul": {
+        "Enjoyable": true,
+        "Successful": true,
+        "Memorable": true,
+        "Recommendable": false,
+        "Rewatchable": false
+      },
+      "Kyle": {
+        "Enjoyable": true,
+        "Successful": false,
+        "Memorable": true,
+        "Recommendable": false,
+        "Rewatchable": false
+      }
+    }
+  },
+  {
+    "id": 397243,
+    "title": "The Autopsy of Jane Doe",
+    "reviews": {
+      "Paul": {
+        "Enjoyable": true,
+        "Successful": true,
+        "Memorable": true,
+        "Recommendable": true,
+        "Rewatchable": true
+      },
+      "Kyle": {
+        "Enjoyable": true,
+        "Successful": true,
+        "Memorable": true,
+        "Recommendable": true,
+        "Rewatchable": true
+      }
+    }
+  },
+  {
+    "id": 419479,
+    "title": "The Babysitter",
+    "reviews": {
+      "Paul": {
+        "Enjoyable": true,
+        "Successful": false,
+        "Memorable": true,
+        "Recommendable": true,
+        "Rewatchable": true
+      },
+      "Kyle": {
+        "Enjoyable": true,
+        "Successful": true,
+        "Memorable": true,
+        "Recommendable": true,
+        "Rewatchable": true
+      }
+    }
+  },
+  {
+    "id": 608654,
+    "title": "The Banana Splits Movie",
+    "reviews": {
+      "Paul": {
+        "Enjoyable": true,
+        "Successful": false,
+        "Memorable": true,
+        "Recommendable": true,
+        "Rewatchable": false
+      },
+      "Kyle": {
+        "Enjoyable": true,
+        "Successful": true,
+        "Memorable": true,
+        "Recommendable": false,
+        "Rewatchable": false
+      }
+    }
+  },
+  {
+    "id": 207774,
+    "title": "The Borderlands",
+    "reviews": {
+      "Paul": {
+        "Enjoyable": true,
+        "Successful": true,
+        "Memorable": true,
+        "Recommendable": true,
+        "Rewatchable": true
+      },
+      "Kyle": {
+        "Enjoyable": true,
+        "Successful": true,
+        "Memorable": true,
+        "Recommendable": true,
+        "Rewatchable": false
+      }
+    }
+  },
+  {
+    "id": 138843,
+    "title": "The Conjuring",
+    "reviews": {
+      "Paul": {
+        "Enjoyable": true,
+        "Successful": true,
+        "Memorable": false,
+        "Recommendable": false,
+        "Rewatchable": false
+      },
+      "Kyle": {
+        "Enjoyable": true,
+        "Successful": true,
+        "Memorable": true,
+        "Recommendable": true,
+        "Rewatchable": true
+      }
+    }
+  },
+  {
+    "id": 259693,
+    "title": "The Conjuring 2",
+    "reviews": {
+      "Paul": {
+        "Enjoyable": true,
+        "Successful": true,
+        "Memorable": false,
+        "Recommendable": true,
+        "Rewatchable": false
+      },
+      "Kyle": {
+        "Enjoyable": true,
+        "Successful": true,
+        "Memorable": true,
+        "Recommendable": true,
+        "Rewatchable": false
+      }
+    }
+  },
+  {
+    "id": 133369,
+    "title": "The Conspiracy",
+    "reviews": {
+      "Paul": {
+        "Enjoyable": true,
+        "Successful": false,
+        "Memorable": true,
+        "Recommendable": false,
+        "Rewatchable": false
+      },
+      "Kyle": {
+        "Enjoyable": true,
+        "Successful": true,
+        "Memorable": true,
+        "Recommendable": false,
+        "Rewatchable": false
+      }
+    }
+  },
+  {
+    "id": 1433,
+    "title": "The Devil's Backbone",
+    "reviews": {
+      "Paul": {
+        "Enjoyable": true,
+        "Successful": false,
+        "Memorable": true,
+        "Recommendable": false,
+        "Rewatchable": false
+      },
+      "Kyle": {
+        "Enjoyable": true,
+        "Successful": true,
+        "Memorable": true,
+        "Recommendable": true,
+        "Rewatchable": false
+      }
+    }
+  },
+  {
+    "id": 354216,
+    "title": "The Devil's Candy",
+    "reviews": {
+      "Paul": {
+        "Enjoyable": true,
+        "Successful": false,
+        "Memorable": true,
+        "Recommendable": false,
+        "Rewatchable": false
+      },
+      "Kyle": {
+        "Enjoyable": true,
+        "Successful": true,
+        "Memorable": true,
+        "Recommendable": true,
+        "Rewatchable": false
+      }
+    }
+  },
+  {
+    "id": 430231,
+    "title": "The Endless",
+    "reviews": {
+      "Paul": {
+        "Enjoyable": true,
+        "Successful": true,
+        "Memorable": true,
+        "Recommendable": true,
+        "Rewatchable": false
+      },
+      "Kyle": {
+        "Enjoyable": true,
+        "Successful": true,
+        "Memorable": true,
+        "Recommendable": true,
+        "Rewatchable": true
+      }
+    }
+  },
+  {
+    "id": 293970,
+    "title": "The Final Girls",
+    "reviews": {
+      "Paul": {
+        "Enjoyable": true,
+        "Successful": false,
+        "Memorable": true,
+        "Recommendable": true,
+        "Rewatchable": true
+      },
+      "Kyle": {
+        "Enjoyable": true,
+        "Successful": false,
+        "Memorable": true,
+        "Recommendable": true,
+        "Rewatchable": true
+      }
+    }
+  },
+  {
+    "id": 375909,
+    "title": "The Forest of the Lost Souls",
+    "reviews": {
+      "Paul": {
+        "Enjoyable": true,
+        "Successful": true,
+        "Memorable": false,
+        "Recommendable": false,
+        "Rewatchable": false
+      },
+      "Kyle": {
+        "Enjoyable": true,
+        "Successful": true,
+        "Memorable": false,
+        "Recommendable": false,
+        "Rewatchable": false
+      }
+    }
+  },
+  {
+    "id": 375366,
+    "title": "The Girl with All the Gifts",
+    "reviews": {
+      "Paul": {
+        "Enjoyable": true,
+        "Successful": false,
+        "Memorable": true,
+        "Recommendable": false,
+        "Rewatchable": false
+      },
+      "Kyle": {
+        "Enjoyable": true,
+        "Successful": true,
+        "Memorable": true,
+        "Recommendable": true,
+        "Rewatchable": true
+      }
+    }
+  },
+  {
+    "id": 241848,
+    "title": "The Guest",
+    "reviews": {
+      "Paul": {
+        "Enjoyable": true,
+        "Successful": true,
+        "Memorable": true,
+        "Recommendable": true,
+        "Rewatchable": true
+      },
+      "Kyle": {
+        "Enjoyable": true,
+        "Successful": true,
+        "Memorable": true,
+        "Recommendable": true,
+        "Rewatchable": true
+      }
+    }
+  },
+  {
+    "id": 484437,
+    "title": "The Hole in the Ground",
+    "reviews": {
+      "Paul": {
+        "Enjoyable": true,
+        "Successful": true,
+        "Memorable": false,
+        "Recommendable": true,
+        "Rewatchable": false
+      },
+      "Kyle": {
+        "Enjoyable": true,
+        "Successful": true,
+        "Memorable": false,
+        "Recommendable": true,
+        "Rewatchable": false
+      }
+    }
+  },
+  {
+    "id": 306947,
+    "title": "The Invitation",
+    "reviews": {
+      "Paul": {
+        "Enjoyable": true,
+        "Successful": true,
+        "Memorable": true,
+        "Recommendable": true,
+        "Rewatchable": false
+      },
+      "Kyle": {
+        "Enjoyable": true,
+        "Successful": true,
+        "Memorable": true,
+        "Recommendable": true,
+        "Rewatchable": false
+      }
+    }
+  },
+  {
+    "id": 463364,
+    "title": "The Isle",
+    "reviews": {
+      "Paul": {
+        "Enjoyable": false,
+        "Successful": false,
+        "Memorable": false,
+        "Recommendable": false,
+        "Rewatchable": false
+      },
+      "Kyle": {
+        "Enjoyable": false,
+        "Successful": true,
+        "Memorable": false,
+        "Recommendable": false,
+        "Rewatchable": false
+      }
+    }
+  },
+  {
+    "id": 340103,
+    "title": "The Monster",
+    "reviews": {
+      "Paul": {
+        "Enjoyable": true,
+        "Successful": false,
+        "Memorable": true,
+        "Recommendable": false,
+        "Rewatchable": false
+      },
+      "Kyle": {
+        "Enjoyable": true,
+        "Successful": true,
+        "Memorable": false,
+        "Recommendable": true,
+        "Rewatchable": false
+      }
+    }
+  },
+  {
+    "id": 433808,
+    "title": "The Ritual",
+    "reviews": {
+      "Paul": {
+        "Enjoyable": true,
+        "Successful": false,
+        "Memorable": true,
+        "Recommendable": true,
+        "Rewatchable": false
+      },
+      "Kyle": {
+        "Enjoyable": true,
+        "Successful": true,
+        "Memorable": false,
+        "Recommendable": true,
+        "Rewatchable": false
+      }
+    }
+  },
+  {
+    "id": 378018,
+    "title": "The Void",
+    "reviews": {
+      "Paul": {
+        "Enjoyable": true,
+        "Successful": true,
+        "Memorable": false,
+        "Recommendable": true,
+        "Rewatchable": false
+      },
+      "Kyle": {
+        "Enjoyable": true,
+        "Successful": true,
+        "Memorable": true,
+        "Recommendable": true,
+        "Rewatchable": true
+      }
+    }
+  },
+  {
+    "id": 541560,
+    "title": "The Wind",
+    "reviews": {
+      "Paul": {
+        "Enjoyable": true,
+        "Successful": true,
+        "Memorable": false,
+        "Recommendable": true,
+        "Rewatchable": false
+      },
+      "Kyle": {
+        "Enjoyable": true,
+        "Successful": true,
+        "Memorable": true,
+        "Recommendable": true,
+        "Rewatchable": false
+      }
+    }
+  },
+  {
+    "id": 310131,
+    "title": "The Witch",
+    "reviews": {
+      "Paul": {
+        "Enjoyable": false,
+        "Successful": true,
+        "Memorable": true,
+        "Recommendable": true,
+        "Rewatchable": false
+      },
+      "Kyle": {
+        "Enjoyable": false,
+        "Successful": true,
+        "Memorable": true,
+        "Recommendable": true,
+        "Rewatchable": false
+      }
+    }
+  },
+  {
+    "id": 396535,
+    "title": "Train to Busan",
+    "reviews": {
+      "Paul": {
+        "Enjoyable": true,
+        "Successful": true,
+        "Memorable": true,
+        "Recommendable": true,
+        "Rewatchable": true
+      },
+      "Kyle": {
+        "Enjoyable": true,
+        "Successful": true,
+        "Memorable": true,
+        "Recommendable": true,
+        "Rewatchable": true
+      }
+    }
+  },
+  {
+    "id": 375012,
+    "title": "Under the Shadow",
+    "reviews": {
+      "Paul": {
+        "Enjoyable": true,
+        "Successful": true,
+        "Memorable": true,
+        "Recommendable": true,
+        "Rewatchable": true
+      },
+      "Kyle": {
+        "Enjoyable": true,
+        "Successful": true,
+        "Memorable": true,
+        "Recommendable": true,
+        "Rewatchable": true
+      }
+    }
+  },
+  {
+    "id": 277685,
+    "original_title": "Unfriended",
+    "reviews": {
+      "Paul": {
+        "Enjoyable": false,
+        "Successful": false,
+        "Memorable": false,
+        "Recommendable": false,
+        "Rewatchable": false
+      },
+      "Kyle": {
+        "Enjoyable": false,
+        "Successful": true,
+        "Memorable": false,
+        "Recommendable": false,
+        "Rewatchable": false
+      }
+    }
+  },
+  {
+    "id": 500664,
+    "original_title": "Upgrade",
+    "reviews": {
+      "Paul": {
+        "Enjoyable": true,
+        "Successful": true,
+        "Memorable": true,
+        "Recommendable": true,
+        "Rewatchable": true
+      },
+      "Kyle": {
+        "Enjoyable": true,
+        "Successful": true,
+        "Memorable": true,
+        "Recommendable": true,
+        "Rewatchable": true
+      }
+    }
+  },
+  {
+    "id": 438466,
+    "original_title": "Us and Them",
+    "reviews": {
+      "Paul": {
+        "Enjoyable": true,
+        "Successful": false,
+        "Memorable": false,
+        "Recommendable": false,
+        "Rewatchable": false
+      },
+      "Kyle": {
+        "Enjoyable": true,
+        "Successful": true,
+        "Memorable": true,
+        "Recommendable": false,
+        "Rewatchable": false
+      }
+    }
+  },
+  {
+    "id": 291272,
+    "title": "We Are Still Here",
+    "reviews": {
+      "Paul": {
+        "Enjoyable": false,
+        "Successful": true,
+        "Memorable": false,
+        "Recommendable": false,
+        "Rewatchable": false
+      },
+      "Kyle": {
+        "Enjoyable": true,
+        "Successful": true,
+        "Memorable": false,
+        "Recommendable": false,
+        "Rewatchable": false
+      }
+    }
+  },
+  {
+    "id": 290999,
+    "title": "Wyrmwood: Road of the Dead",
+    "reviews": {
+      "Paul": {
+        "Enjoyable": false,
+        "Successful": false,
+        "Memorable": true,
+        "Recommendable": false,
+        "Rewatchable": false
+      },
+      "Kyle": {
+        "Enjoyable": false,
+        "Successful": false,
+        "Memorable": true,
+        "Recommendable": false,
+        "Rewatchable": false
+      }
+    }
+  },
+  {
+    "id": 297160,
+    "title": "XX",
+    "reviews": {
+      "Paul": {
+        "Enjoyable": false,
+        "Successful": false,
+        "Memorable": false,
+        "Recommendable": false,
+        "Rewatchable": false
+      },
+      "Kyle": {
+        "Enjoyable": false,
+        "Successful": false,
+        "Memorable": false,
+        "Recommendable": false,
+        "Rewatchable": false
+      }
+    }
+  },
+  {
+    "id": 548064,
+    "title": "You Might Be The Killer",
+    "reviews": {
+      "Paul": {
+        "Enjoyable": true,
+        "Successful": true,
+        "Memorable": false,
+        "Recommendable": true,
+        "Rewatchable": false
+      },
+      "Kyle": {
+        "Enjoyable": true,
+        "Successful": true,
+        "Memorable": true,
+        "Recommendable": true,
+        "Rewatchable": true
+      }
+    }
+  },
+  {
+    "id": 83899,
+    "title": "You're Next",
+    "reviews": {
+      "Paul": {
+        "Enjoyable": true,
+        "Successful": true,
+        "Memorable": true,
+        "Recommendable": true,
+        "Rewatchable": true
+      },
+      "Kyle": {
+        "Enjoyable": true,
+        "Successful": true,
+        "Memorable": true,
+        "Recommendable": true,
+        "Rewatchable": true
+      }
+    }
+  }
+]

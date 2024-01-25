@@ -1,0 +1,82 @@
+@media all and (max-width:768px) {
+  html {
+    min-width: 320px;
+    font-size: 80%;
+  }
+  header {
+    h1 {
+      font-size: 2rem;
+    }
+    .headerBlurb {
+      width: 100%;
+      margin: 0;
+      border-radius: 0;
+    }
+  }
+  .clickReviewBox h4 {
+    font-size:1rem;
+  }
+  .card h5 {
+    font-size: 1rem;
+  }
+  .clickable:not(h1) {
+    color: #FB5;
+  }
+  .card {
+    margin: 30px 0;
+    width:380px;
+  }
+  footer {
+    height: 60px;
+    text-align: center;
+  }
+  .moviePage {
+    margin: 0;
+  }
+  .overviewHeader {
+    margin-bottom:8px;
+  }
+  .moviePageInfo {
+    margin: 0 10px;
+  }
+  .moviePagePoster {
+    max-width:100%;
+  }
+  .movieDeets {
+    flex-basis:100%;
+    margin-left:0;
+  }
+  .movieOverview {
+    flex-direction:column;
+  }
+  .pkReviews {
+    padding-top:0;
+  }
+  .trailer {
+    margin-left:0;
+  }
+  .reviewChart {
+    margin-bottom: 15px;
+  }
+  .movieReviewChart li {
+    width:60px;
+    h6 {
+      font-size: .75rem;
+    }
+    &:hover {
+      background-color:transparent;
+      border:none;
+    }
+  }
+  .legend {
+    text-align:center;
+  }
+  .noHoverCriteria {
+    margin:20px 0 0;
+  }
+  .noHoverToolTip {
+    p {
+      margin: 10px 0 20px;
+    }
+  }
+}

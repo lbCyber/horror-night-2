@@ -1,0 +1,225 @@
+  @import 'partials/normalize';
+  /*
+
+    font-family: 'Sarabun', sans-serif;
+    font-family: 'Racing Sans One', cursive;
+
+*/
+
+  // Base Styles
+  body {
+    background-color: #111;
+    color: #FFF;
+    font-family: 'Sarabun', sans-serif;
+  }
+
+  h1,
+  h2,
+  h3 {
+    font-family: 'Racing Sans One', serif;
+  }
+
+  h1 {
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 4rem;
+  }
+
+  h2 {
+    font-size: 2.5rem;
+    margin: 15px 0 10px;
+    text-transform: uppercase;
+  }
+
+  h3 {
+    font-weight: 400;
+  }
+
+  h4 {
+    text-transform: uppercase;
+  }
+
+  h3,
+  h4,
+  h5,
+  h6 {
+    margin: 5px 0 10px;
+  }
+
+  h6 {
+    font-size: .8rem;
+    font-weight: 600;
+  }
+
+  img {
+    max-width: 100%;
+    display: block;
+  }
+
+  main {
+    position: relative;
+    padding-bottom: 50px;
+  }
+
+  a {
+    text-decoration: none;
+    color: #FB5;
+    font-style: inherit;
+    transition: color .5s, text-shadow .5s;
+    &:hover {
+      color: #FFF;
+      text-shadow: 0 0 5px #000;
+    }
+  }
+
+  p {
+    margin-top: 20px;
+  }
+
+  header {
+    margin: 0 auto 20px;
+    h1 {
+      padding: 20px 0;
+      background-color: rgba(10, 10, 10, .85);
+    }
+  }
+
+  .headerBlurb {
+    width: 60%;
+    margin: 20px auto;
+    padding: 30px;
+    background-color: rgba(255, 255, 255, .15);
+    border-radius: 15px;
+    line-height: 1.35rem;
+    h4 {
+      font-weight: 600;
+      text-transform: unset;
+      margin-bottom: 20px;
+    }
+  }
+
+  // Common styles
+  .wrapper {
+    max-width: 1280px;
+    overflow: hidden;
+    margin: 0 auto;
+    z-index: 1;
+    background: transparent;
+    position: relative;
+  }
+
+  .clickable {
+    cursor: pointer;
+    transition: color .5s, text-shadow .5s;
+    &:hover {
+      color: #FB5;
+      text-shadow: 0 0 5px #000;
+    }
+  }
+
+  .noHoverToolTip {
+    visibility: hidden;
+    position: absolute;
+    height: 0;
+    width: 0;
+  }
+
+  .backDrop {
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    margin: 0;
+    position: fixed;
+    z-index: -1;
+    opacity: 0;
+  }
+
+  .green {
+    font-size: .8rem;
+    font-weight: 600;
+    color: #393;
+  }
+
+  .red {
+    font-size: .8rem;
+    font-weight: 600;
+    color: #C55;
+  }
+
+  .pages {
+    width: calc(100% - 60px);
+    display: flex;
+    justify-content: space-around;
+    p {
+      cursor: pointer;
+      margin: 0 20px;
+    }
+  }
+
+  // CSS Transition states
+  // Background
+  .loadBGFade-enter {
+    opacity: 0
+  }
+
+  .loadBGFade-enter-active {
+    opacity: .8;
+    transition: opacity 1s
+  }
+
+  .loadBGFade-enter-done {
+    opacity: .8;
+  }
+
+  .loadBGFade-exit {
+    opacity: .8;
+  }
+
+  .loadBGFade-exit-active {
+    opacity: 0;
+    transition: opacity 1s
+  }
+
+  // Loader
+  .loadFade-enter {
+    opacity: 0;
+  }
+
+  .loadFade-enter-active {
+    opacity: 1;
+    transition: opacity .5s
+  }
+
+  .loadFade-exit {
+    opacity: 1;
+  }
+
+  .loadFade-exit-active {
+    opacity: 0;
+    transition: opacity .5s
+  }
+
+  // Movie Card
+  .cardLoadFade-enter {
+    opacity: 0;
+  }
+
+  .cardLoadFade-enter-active,
+  .cardLoadFade-enter-done {
+    opacity: 1;
+    transition: opacity 1s, background-color .3s, box-shadow .3s;
+  }
+
+  .movieGrid {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    justify-content: center;
+    position: relative;
+    z-index: 1;
+  }
+
+  @import 'partials/1280';
+  @import 'partials/1024';
+  @import 'partials/768';
+  @import 'partials/420';

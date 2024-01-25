@@ -1,0 +1,16 @@
+@media all and (max-width:420px) {
+
+  body {
+    min-width:320px;
+  }
+
+  .wrapper {
+    min-width: 320px;
+  }
+
+  .card {
+    width: 100%;
+    min-width:310px;
+  }
+
+}

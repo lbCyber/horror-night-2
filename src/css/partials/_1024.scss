@@ -1,0 +1,100 @@
+@media all and (max-width:1024px) {
+  header h1 {
+    padding: 20px 30px;
+  }
+  .hoverToolTip {
+    display: none;
+  }
+  .card {
+    min-width: 300px;
+    &:hover {
+      box-shadow:none;
+      background-color: rgba(66,66,66,.66);
+    }
+  }
+  .backDrop {
+    background-position: center;
+  }
+  .imageContainer {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    img {
+      height: unset;
+    }
+  }
+  .card figCaption {
+    opacity: 1;
+    background: none;
+    position: relative;
+    height: unset;
+  }
+  .clickReviewBox {
+    width: 60%;
+    padding: 10px;
+    margin: 10px 0 0;
+    background-color: rgba(0, 0, 0, .6);
+    border: 1px solid rgba(255, 255, 255, .4);
+    transition: background-color .3s, border .3s;
+    &:hover {
+      background-color: rgba(0, 0, 0, .75);
+      border: 1px solid #FB5;
+    }
+  }
+  .moviePage,
+  .moviePageInfo,
+  .pkReviews,
+  .movieChat {
+    margin: 0 30px;
+  }
+  .movieInfoContainer {
+    flex-direction: row;
+    max-height: unset;
+  }
+  .trailer {
+    order: 2;
+    margin-top: 80px;
+    flex-basis: 100%;
+    position: relative;
+    min-height: 300px;
+  }
+  .movieDeets {
+    order: 1;
+    width: 100%;
+    flex-basis: calc(65% - 20px);
+    justify-content: space-between;
+  }
+  .pkReviews {
+    flex-direction: column;
+  }
+  .movieReviewChart {
+    ul {
+      padding: 0;
+    }
+  }
+  .reviewToolTip {
+    max-width: 100%;
+  }
+  .noHoverToolTip {
+    visibility: visible;
+    position: relative;
+    height: unset;
+    width: 100%;
+    h2 {
+      margin-bottom: 20px;
+      color: #B43;
+    }
+    h4 {
+      margin: 0;
+      color: #FB5;
+      font-weight: 400;
+      text-transform: unset;
+    }
+    p {
+      margin: 10px 20px 20px;
+    }
+  }
+  .noHoverCriteria {
+    margin: 20px 0 0 20px;
+  }
+}
