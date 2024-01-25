@@ -1,0 +1,187 @@
+import { useEffect, useState } from 'react';
+import axios from 'axios';
+import nl2br from 'react-newline-to-break';
+import { Link } from "react-router-dom";
+
+const Movie = (props) => {
+
+  const [language, setLanguage] = useState(""),
+        [video, setVideo] = useState(""),
+        [hover, setHover] = useState(null),
+        [hoverReviewer, setHoverReviewer] = useState(null)
+
+  useEffect(()=>{
+    // Please random user, stop changing the language for one movie to Persian in en-US
+    const langCompare = (language) => language.iso_639_1 === props.moviePick.original_language;
+    const output = props.languages.find(langCompare);
+    setLanguage(output["english_name"])
+
+    axios({
+      url: `https://api.themoviedb.org/3/movie/${props.moviePick.id}/videos`,
+      method: 'GET',
+      dataType: 'json',
+      headers: { Authorization: process.env.REACT_APP_API_AUTH },
+      language: `"${props.moviePick.original_language}"`
+    }).then(response => {
+      const findYouTube = (v) => (v.site === "YouTube" && v.type === "Trailer")
+      const youTubeTrailer = response.data.results.find(findYouTube)
+
+      if (youTubeTrailer.key === "6qCqrODw1nM") { // Babysitter default vid is... uh...
+        setVideo("CQTEUd-5JMQ")
+      } else {
+        setVideo(youTubeTrailer.key)
+      }
+    }).finally(() => {
+      setTimeout(() => {
+        props.backDrop(`https://image.tmdb.org/t/p/w1280${props.moviePick.backdrop_path}`)
+      }, 1100)
+      window.scrollTo(0, 0)
+    })
+  })
+
+  const blurbHover = (c, r = null) => {
+    setHover(reviewBlurb[c])
+    setHoverReviewer(r)
+  }
+
+  const reviewBlurb = [
+    {
+      criteria: "Enjoyable",
+      criteriaShort: "enjoyable",
+      keyName: "Enjoyable",
+      blurb: `The simplest criteria there is: Did we like watching it? \n\nAn "enjoyable" rating means we enjoyed the overall experience the film offered. Even if the ending somehow sucked, it was still a good ride.`
+    },
+    {
+      criteria: "Succeeds at what it intends to do",
+      criteriaShort: "successful",
+      keyName: "Successful",
+      blurb: `A little more nuanced than the rest of the criteria: Was what the film tried to do or be clear, and did it succeed in doing or being that thing?\n\nA successful film doesn't have to be ambitious. Even a barebones slasher fic is a success if it can be a slasher fic without at any point falling flat.`
+    },
+    {
+      criteria: "Memorable",
+      criteriaShort: "memorable",
+      keyName: "Memorable",
+      blurb: `A film can do everything right, and it can be absolutely enjoyable from beginning to end... but how much of an impact does it have on its audience?\n\nThis is more or less a test of the film's ambition. How unique was it? How much of it can we actually remember after seeing it?\n\nA memorable film is one that for any reason has staying power.`
+    },
+    {
+      criteria: "Easy to recommend",
+      criteriaShort: "easy to recommend",
+      keyName: "Recommendable",
+      blurb: `A movie that's easy to recommend is one with at least somewhat of a strong sense of appeal to a general audience.\n\nHow comfortable would we be recommending this film to other friends? How sure are we that they'd like it, instead of it being a little too niche?`
+    },
+    {
+      criteria: "Rewatchable",
+      criteriaShort: "rewatchable",
+      keyName: "Rewatchable",
+      blurb: `A little self-explanatory. A rewatchable film is one we'd have no qualms about watching again. Or maybe we've already watched it hundreds of times and are still good for another.\n\nNote: A film can still be good even if it isn't considered rewatchable. Some are even fantastic, but are so neatly-wrapped up that there wouldn't be much to gain from watching it again.`
+    },
+  ]
+
+  return (
+    <article className="moviePage">
+      <div>
+        <Link to="/" className="goBack clickable" onMouseDown={() => {
+          props.callback(null)
+          props.backDrop(null)
+        }}>&gt; Return to the main menu</Link>
+      </div>
+      <section className="moviePageInfo">
+        <h2>{(props.moviePick.title === "زیر سایه") ? "Under the Shadow" : `${props.moviePick.title}`} ({props.moviePick.release_date.slice(0, 4)})</h2>
+        <div className="movieInfoContainer">
+          <img className="moviePagePoster" src={`https://image.tmdb.org/t/p/w600_and_h900_bestv2/${props.moviePick.poster_path}`} alt={`Movie poster for ${props.moviePick.title}`} />
+          <iframe className="trailer" title={`Trailer for ${props.moviePick.title}`} src={`https://www.youtube-nocookie.com/embed/${video}`} frameBorder="0" allow="accelerometer; encrypted-media; gyroscope; picture-in-picture" allowFullScreen={true} modestbranding="true"></iframe>
+          <div className="deetTopInfo movieDeets">
+            <p><span className="deetHeader">Language: </span> {language}</p>
+            <p><span className="deetHeader"><a href={`https://www.themoviedb.org/movie/${props.moviePick.id}`} target="_blank" rel="noopener noreferrer">TMDB Rating:</a> </span> {props.moviePick.vote_average} ({props.moviePick.vote_count} votes)</p>
+          </div>
+          <div className="movieOverview movieDeets"><p className="deetHeader overviewHeader">Overview: </p> <p className="overviewText">{props.moviePick.overview}</p></div>
+        </div>
+      </section>
+      <section className="pkReviews">
+        <div className="reviewChart">
+          <div className="movieReviewChart">
+            <h4>Paul:</h4>
+            <ul>
+              <li onMouseOver={() => { blurbHover(0, "Paul") }} onMouseLeave={() => { blurbHover(null) }}>
+                {(props.movieReviews.reviews.Paul.Enjoyable) ? <img src="./assets/yes.png" alt={`Paul found the movie enjoyable`} /> : <img src="./assets/no.png" alt={`Paul didn't find the movie enjoyable`} />}
+                <h6>Enjoyable</h6>
+              </li>
+              <li onMouseOver={() => { blurbHover(1, "Paul") }} onMouseLeave={() => { blurbHover(null) }}>
+                {(props.movieReviews.reviews.Paul.Successful) ? <img src="./assets/yes.png" alt={`Paul found the movie successful`} /> : <img src="./assets/no.png" alt={`Paul didn't find the movie successful`} />}
+              <h6>Successful</h6>
+              </li>
+              <li onMouseOver={() => { blurbHover(2, "Paul") }} onMouseLeave={() => { blurbHover(null) }}>
+                {(props.movieReviews.reviews.Paul.Memorable) ? <img src="./assets/yes.png" alt={`Paul found the movie memorable`} /> : <img src="./assets/no.png" alt={`Paul didn't find the movie memorable`} />}
+              <h6>Memorable</h6>
+              </li>
+              <li onMouseOver={() => { blurbHover(3, "Paul") }} onMouseLeave={() => { blurbHover(null) }}>
+                {(props.movieReviews.reviews.Paul.Recommendable) ? <img src="./assets/yes.png" alt={`Paul found the movie recommendable`} /> : <img src="./assets/no.png" alt={`Paul didn't find the movie recommendable`} />}
+              <h6>Recommended</h6>
+              </li>
+              <li onMouseOver={() => { blurbHover(4, "Paul") }} onMouseLeave={() => { blurbHover(null) }}>
+                {(props.movieReviews.reviews.Paul.Rewatchable) ? <img src="./assets/yes.png" alt={`Paul found the movie rewatchable`} /> : <img src="./assets/no.png" alt={`Paul didn't find the movie rewatchable`} />}
+              <h6>Rewatchable</h6>
+              </li>
+            </ul>
+          </div>
+          <div className="movieReviewChart">
+            <h4>Kyle:</h4>
+            <ul>
+              <li onMouseOver={() => { blurbHover(0, "Kyle") }} onMouseLeave={() => { blurbHover(null) }}>
+                {(props.movieReviews.reviews.Kyle.Enjoyable) ? <img src="./assets/yes.png" alt={`Kyle found the movie enjoyable`} /> : <img src="./assets/no.png" alt={`Kyle didn't find the movie enjoyable`} />}
+              <h6>Enjoyable</h6>
+              </li>
+              <li onMouseOver={() => { blurbHover(1, "Kyle") }} onMouseLeave={() => { blurbHover(null) }}>
+                {(props.movieReviews.reviews.Kyle.Successful) ? <img src="./assets/yes.png" alt={`Kyle found the movie successful`} /> : <img src="./assets/no.png" alt={`Kyle didn't find the movie successful`} />}
+              <h6>Successful</h6>
+              </li>
+              <li onMouseOver={() => { blurbHover(2, "Kyle") }} onMouseLeave={() => { blurbHover(null) }}>
+                {(props.movieReviews.reviews.Kyle.Memorable) ? <img src="./assets/yes.png" alt={`Kyle found the movie memorable`} /> : <img src="./assets/no.png" alt={`Kyle didn't find the movie memorable`} />}
+              <h6>Memorable</h6>
+              </li>
+              <li onMouseOver={() => { blurbHover(3, "Kyle") }} onMouseLeave={() => { blurbHover(null) }}>
+                {(props.movieReviews.reviews.Kyle.Recommendable) ? <img src="./assets/yes.png" alt={`Kyle found the movie recommendable`} /> : <img src="./assets/no.png" alt={`Kyle didn't find the movie recommendable`} />}
+              <h6>Recommended</h6>
+              </li>
+              <li onMouseOver={() => { blurbHover(4, "Kyle") }} onMouseLeave={() => { blurbHover(null) }}>
+                {(props.movieReviews.reviews.Kyle.Rewatchable) ? <img src="./assets/yes.png" alt={`Kyle found the movie rewatchable`} /> : <img src="./assets/no.png" alt={`Kyle didn't find the movie rewatchable`} />}
+              <h6>Rewatchable</h6>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div className="reviewToolTip">
+          {(hover !== null && hover !== undefined) ?
+            <div className="reviewToolTipContent hoverToolTip" aria-hidden>
+              <h5>{hover["criteria"]}</h5>
+              <p>{nl2br(hover["blurb"])}</p>
+              {(props.movieReviews.reviews[hoverReviewer][hover["keyName"]]) ?
+                <p className="green">{hoverReviewer} found {props.moviePick.title} {hover["criteriaShort"]}</p>
+                : <p className="red">{hoverReviewer} did not find {props.moviePick.title} {hover["criteriaShort"]}</p>
+              }
+            </div>
+            : null}
+          <div className="reviewToolTipContent noHoverToolTip">
+            <h2 className="legend">Legend</h2>
+            {reviewBlurb.map((movieCriteria, key) => {
+              return (
+                <div className="noHoverCriteria" key={key}>
+                  <h4>{movieCriteria["criteria"]}</h4>
+                  <p>{nl2br(movieCriteria["blurb"])}</p>
+                </div>
+              )
+            })}
+          </div>
+        </div>
+      </section>
+      <div>
+        <Link to="/" className="goBack clickable" onMouseDown={() => {
+          props.callback(null)
+          props.backDrop(null)
+        }}>&gt; Return to the main menu</Link>
+      </div>
+    </article>
+  )
+}
+
+export default Movie;
