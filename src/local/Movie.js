@@ -3,7 +3,7 @@ import axios from 'axios';
 import nl2br from 'react-newline-to-break';
 import { Link } from "react-router-dom";
 
-const Movie = ({moviePick, movieReviews, callback, backDrop, languages}) => {
+const Movie = ({moviePick, movieReviews, backDrop, languages}) => {
 
   const [language, setLanguage] = useState(""),
         [video, setVideo] = useState(""),
@@ -11,6 +11,7 @@ const Movie = ({moviePick, movieReviews, callback, backDrop, languages}) => {
         [hoverReviewer, setHoverReviewer] = useState(null)
 
   useEffect(()=>{
+    backDrop(`https://image.tmdb.org/t/p/w1280${moviePick.backdrop_path}`)
     // Please random user, stop changing the language for one movie to Persian in en-US
     const langCompare = (language) => language.iso_639_1 === moviePick.original_language;
     const output = languages.find(langCompare);
@@ -31,13 +32,8 @@ const Movie = ({moviePick, movieReviews, callback, backDrop, languages}) => {
       } else {
         setVideo(youTubeTrailer.key)
       }
-    }).finally(() => {
-      setTimeout(() => {
-        backDrop(`https://image.tmdb.org/t/p/w1280${moviePick.backdrop_path}`)
-      }, 1100)
-      window.scrollTo(0, 0)
     })
-  },[moviePick, setVideo, backDrop, languages])
+  },[moviePick, languages])
 
   const blurbHover = (c, r = null) => {
     setHover(reviewBlurb[c])
@@ -80,10 +76,12 @@ const Movie = ({moviePick, movieReviews, callback, backDrop, languages}) => {
   return (
     <article className="moviePage">
       <div>
-        <Link to="/" className="goBack clickable" onMouseDown={() => {
-          callback(null)
-          backDrop(null)
-        }}>&gt; Return to the main menu</Link>
+        <p onMouseUp={(e) => {
+          if (e.button === 0) {
+            backDrop(null, true)
+          }}}>
+          <Link className="goBack clickable" to="/" relative="path">&gt; Return to the main menu</Link>
+        </p>
       </div>
       <section className="moviePageInfo">
         <h2>{(moviePick.title === "زیر سایه") ? "Under the Shadow" : `${moviePick.title}`} ({moviePick.release_date.slice(0, 4)})</h2>
@@ -175,10 +173,12 @@ const Movie = ({moviePick, movieReviews, callback, backDrop, languages}) => {
         </div>
       </section>
       <div>
-        <Link to="/" className="goBack clickable" onMouseDown={() => {
-          callback(null)
-          backDrop(null)
-        }}>&gt; Return to the main menu</Link>
+        <p onMouseUp={(e) => {
+          if (e.button === 0) {
+            backDrop(null, true)
+          }}}>
+          <Link className="goBack clickable" to="/" relative="path">&gt; Return to the main menu</Link>
+        </p>
       </div>
     </article>
   )

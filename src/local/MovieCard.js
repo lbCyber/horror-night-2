@@ -1,30 +1,21 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { CSSTransition } from 'react-transition-group';
 import { Link } from "react-router-dom";
 
-const MovieCard = ({moviePick, language, cardNumber, ready, reviewData, callback, backDrop}) => {
+const MovieCard = ({moviePick, language, cardNumber, ready, reviewData, backDrop}) => {
 
   const [loaded, setIsLoaded] = useState(false),
-        [hover, setIsHovering] = useState(false),
-        [poster, setPoster] = useState(null),
         [paulRank, setPaulRank] = useState(0),
-        [kyleRank, setKyleRank] = useState(0);
+        [kyleRank, setKyleRank] = useState(0)
 
   useEffect(()=>{
     const reviewsum = (arr) => Object.values(arr).reduce((a, b) => a + b, 0) // Simple adder for paulRank and kyleRank
     setPaulRank(reviewsum(reviewData.reviews["Paul"]))
     setKyleRank(reviewsum(reviewData.reviews["Kyle"]))
-    setPoster(`https://image.tmdb.org/t/p/w600_and_h900_bestv2/${moviePick.poster_path}`)
-
     setTimeout(() => {
       setIsLoaded(true)
     }, cardNumber * 75)
-  },[cardNumber, reviewData, setPoster, moviePick, setIsLoaded, setPaulRank, setKyleRank])
-
-  const setHover = (s) => {
-    setIsHovering(s)
-    backDrop(null)
-  }
+  },[cardNumber, reviewData, moviePick])
 
   return (
     <>
@@ -32,16 +23,7 @@ const MovieCard = ({moviePick, language, cardNumber, ready, reviewData, callback
         in={loaded}
         timeout={100}
         classNames="cardLoadFade">
-        <figure className="card" tabIndex={cardNumber + 2} id={`card${cardNumber}`} onMouseEnter={() => {
-          setHover(true)
-          setTimeout(() => {
-            if (ready && hover) {
-              backDrop(poster)
-            }
-          }, 1000)
-        }} onMouseLeave={() => {
-          setHover(false)
-        }}>
+        <figure className="card" tabIndex={cardNumber + 2} id={`card${cardNumber}`}>
           <div className="cardTitle">
             {
               // Someone keeps changing the en-US title for Under the Shadow to its persian title, and it really isn't the fight I want to dedicate my life to, so we'll just change it here
@@ -51,10 +33,8 @@ const MovieCard = ({moviePick, language, cardNumber, ready, reviewData, callback
           </div>
           <div className="imageContainer">
             <img src={`https://image.tmdb.org/t/p/w600_and_h900_bestv2/${moviePick.poster_path}`} alt={`Movie poster for ${moviePick.title}`} />
-            <Link to={`/${moviePick.id}`}>
-              <figcaption onMouseDown={() => {
-                callback(moviePick.id)
-              }}>
+            <Link to={`/${moviePick.id}`} onMouseUp={()=>window.scrollTo(0, 0)}>
+              <figcaption>
                 <div className="clickReviewBox" >
                   {(paulRank + kyleRank > 5) ?
                     <h4 className="green">{`Rating: ${paulRank + kyleRank}/10`}</h4>
