@@ -44,5 +44,6 @@
     "react-router-dom": "^6.21.3",
     "sass": "^1.70.0",
     "sass-helper": "^1.0.9"
-  }
+  },
+  "homepage": "http://horror-night.lintbox.com"
 }

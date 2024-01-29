@@ -42,37 +42,6 @@ const App = () => {
     }, 10)
   },[back])
 
-  const pageNav = (bottom = false) => {
-    const prevValid = (page.current > 1),
-          nextValid = (page.current < pageTotal.current),
-          prevPage = !prevValid ? "" : "< previous page",
-          nextPage = !nextValid ? "" : "next page >"
-    const clickAction = (activate, val = 0) => {
-      if (activate) {
-        page.current = page.current + val
-        if (bottom) { window.scrollTo(0, 0) }
-        setApiData([])
-        getList(page)
-      }
-    }
-    return (
-      <>
-        <p className={`page${(prevPage !== "") ? " clickable" : " noClick"}`} onMouseUp={(e) => {
-          if (e.button === 0) {
-            clickAction(prevValid, -1)
-          }}}>
-          {prevPage}
-        </p>
-        <p className={`page${(nextPage !== "") ? " clickable" : " noClick"}`} onMouseUp={(e) => {
-          if (e.button === 0) {
-            clickAction(nextValid, 1)
-          }}}>
-          {nextPage}
-        </p>
-      </>
-    )
-  }
-
   const pickLanguage = (lang) => {
     //Return true/false if language exists in json file
     const langCompare = (language) => language.iso_639_1 === lang;
@@ -132,6 +101,38 @@ const App = () => {
 
   const MovieGrid = () => {
     simpleBackCB(null)
+
+    const pageNav = (bottom = false) => {
+      const prevValid = (page.current > 1),
+            nextValid = (page.current < pageTotal.current),
+            prevPage = !prevValid ? "" : "< previous page",
+            nextPage = !nextValid ? "" : "next page >"
+      const clickAction = (activate, val = 0) => {
+        if (activate) {
+          page.current = page.current + val
+          if (bottom) { window.scrollTo(0, 0) }
+          setApiData([])
+          getList(page)
+        }
+      }
+      return (
+        <>
+          <p className={`page${(prevPage !== "") ? " clickable" : " noClick"}`} onMouseUp={(e) => {
+            if (e.button === 0) {
+              clickAction(prevValid, -1)
+            }}}>
+            {prevPage}
+          </p>
+          <p className={`page${(nextPage !== "") ? " clickable" : " noClick"}`} onMouseUp={(e) => {
+            if (e.button === 0) {
+              clickAction(nextValid, 1)
+            }}}>
+            {nextPage}
+          </p>
+        </>
+      )
+    }
+
     return (
       <>
         <div className="headerBlurb">

@@ -85,7 +85,7 @@ const Movie = ({moviePick, movieReviews, backDrop, languages}) => {
         yesno: movieReviews.reviews[p][i.keyName]
     }))
     return criteria.map((i,k)=>(
-      <li onMouseOver={() => { blurbHover(k, p) }} onMouseLeave={() => { blurbHover(null) }}>
+      <li key={k} onMouseOver={() => { blurbHover(k, p) }} onMouseLeave={() => { blurbHover(null) }}>
         {(i.yesno) ? <img src="./assets/yes.png" alt={`${p} found the movie ${i.criteria}`} /> : <img src="./assets/no.png" alt={`${p} didn't find the movie ${i.criteria}`} />}
         <h6>{i.Criteria}</h6>
       </li>
@@ -108,7 +108,7 @@ const Movie = ({moviePick, movieReviews, backDrop, languages}) => {
           </div>
           <div className="deetTopInfo movieDeets">
             <p><span className="deetHeader">Language: </span> {language}</p>
-            <p><span className="deetHeader"><a href={`https://www.themoviedb.org/movie/${moviePick.id}`} target="_blank" rel="noopener noreferrer">TMDB Rating:</a> </span> {moviePick.vote_average} ({moviePick.vote_count} votes)</p>
+            <p><span className="deetHeader"><a href={`https://www.themoviedb.org/movie/${moviePick.id}`} target="_blank" rel="noopener noreferrer">TMDB Rating:</a> </span> {moviePick.vote_average.toFixed(1)} ({moviePick.vote_count} votes)</p>
           </div>
           <div className="movieOverview movieDeets"><p className="deetHeader overviewHeader">Overview: </p> <p className="overviewText">{moviePick.overview}</p></div>
         </div>

@@ -268,7 +268,7 @@
         "Successful": true,
         "Memorable": true,
         "Recommendable": true,
-        "Rewatchable": true
+        "Rewatchable": false
       },
       "Kyle": {
         "Enjoyable": true,
@@ -306,7 +306,7 @@
       "Paul": {
         "Enjoyable": true,
         "Successful": true,
-        "Memorable": false,
+        "Memorable": true,
         "Recommendable": true,
         "Rewatchable": false
       },

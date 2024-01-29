@@ -35,7 +35,10 @@ const MovieCard = ({moviePick, language, cardNumber, reviewData}) => {
           </div>
           <div className="imageContainer">
             <img src={`https://image.tmdb.org/t/p/w600_and_h900_bestv2/${moviePick.poster_path}`} alt={`Movie poster for ${moviePick.title}`} />
-            <Link to={`/${moviePick.id}`} onMouseUp={()=>window.scrollTo(0, 0)}>
+            <Link to={`/${moviePick.id}`} onMouseUp={(e)=>{
+              if (e.button === 0) {
+                window.scrollTo(0, 0)
+              }}}>
               <figcaption>
                 <div className="clickReviewBox" >
                   {(paulRank + kyleRank > 5) ?
@@ -56,7 +59,7 @@ const MovieCard = ({moviePick, language, cardNumber, reviewData}) => {
               : <h5 className="ratingNumber red">{`Kyle: ${kyleRank}/5`}</h5>}
           </div>
           <h6>Language: {language}</h6>
-          <h6><a href={`https://www.themoviedb.org/movie/${moviePick.id}`} target="_blank" rel="noopener noreferrer">TMDB Rating:</a> {moviePick.vote_average}/10</h6>
+          <h6><a href={`https://www.themoviedb.org/movie/${moviePick.id}`} target="_blank" rel="noopener noreferrer">TMDB Rating:</a> {moviePick.vote_average.toFixed(1)}/10</h6>
         </figure>
       </CSSTransition>
     </>
