@@ -1,6 +1,6 @@
 import './styles/app.scss'
 import { useEffect, useState, useCallback, useRef } from 'react';
-import { BrowserRouter, Routes, Route, Outlet } from "react-router-dom";
+import { HashRouter, Routes, Route, Outlet } from "react-router-dom";
 import Swal from 'sweetalert2';
 import axios from 'axios';
 import Footer from './local/Footer'
@@ -51,7 +51,6 @@ const App = () => {
 
   const getList = useCallback((page) => {
     setIsLoading(true)
-    fetch()
     axios({ // Get our local review data
       url: './json/reviews.json',
       method: 'GET',
@@ -156,7 +155,7 @@ const App = () => {
   }
 
   return (
-    <BrowserRouter basename="/">
+    <HashRouter basename="/">
       <Routes>
         <Route element={<IndexContent />}>
           <Route index element={<MovieGrid />} />
@@ -172,7 +171,7 @@ const App = () => {
         </Route>
       </Routes>
       <Footer />
-    </BrowserRouter>
+    </HashRouter>
   );
 }
 
