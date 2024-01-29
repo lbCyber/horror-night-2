@@ -30,17 +30,17 @@ const App = () => {
     })
   },[])
 
-  const bgCallBack = useCallback((bg) => {
+  const bgCallBack = (bg) => {
     if (window.innerWidth > 768) {
       setBack(bg)
     }
-  },[])
+  }
 
-  const simpleBackCB = useCallback((bg) => {
+  const simpleBackCB = (bg) => {
     setTimeout(()=>{
       setBack(bg)
     }, 10)
-  },[back])
+  }
 
   const pickLanguage = (lang) => {
     //Return true/false if language exists in json file
@@ -51,6 +51,7 @@ const App = () => {
 
   const getList = useCallback((page) => {
     setIsLoading(true)
+    fetch()
     axios({ // Get our local review data
       url: './json/reviews.json',
       method: 'GET',
@@ -87,7 +88,7 @@ const App = () => {
   const IndexContent = () => {
     return (
       <>
-        <div className={`backDrop${(back !== null) ? " loadBGFade-enter-done" : null}`} style={{ backgroundImage: `radial-gradient(transparent, #000), url("${back}")` }}></div>
+        <div className="backDrop" style={{ backgroundImage: `radial-gradient(transparent, #000), url("${back}")` }}></div>
         <Header backDrop={bgCallBack} />
         {isLoading ? <LoadingModal /> : null}
         <main>
@@ -144,7 +145,7 @@ const App = () => {
           {
             apiData.map((movie, key) => {
               return (
-                <MovieCard moviePick={movie} key={key} language={pickLanguage(movie.original_language)} cardNumber={key} reviewData={review[movie.id]} backDrop={bgCallBack} />
+                <MovieCard moviePick={movie} key={key} language={pickLanguage(movie.original_language)} cardNumber={key} reviewData={review[movie.id]}  />
                 )
               })
             }

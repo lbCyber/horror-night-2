@@ -33,7 +33,7 @@ const Movie = ({moviePick, movieReviews, backDrop, languages}) => {
         setVideo(youTubeTrailer.key)
       }
     })
-  },[moviePick, languages])
+  },[moviePick, languages, backDrop])
 
   const blurbHover = (c, r = null) => {
     setHover(reviewBlurb[c])

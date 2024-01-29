@@ -130,7 +130,7 @@
     margin: 0;
     position: fixed;
     z-index: -1;
-    opacity: 0;
+    opacity: 1;
   }
 
   .green {
@@ -163,59 +163,6 @@
     p:not(.noclick) {
       cursor: pointer;
     }
-  }
-
-  // CSS Transition states
-  // Background
-  .loadBGFade-enter {
-    opacity: 0
-  }
-
-  .loadBGFade-enter-active {
-    opacity: .8;
-    transition: opacity 1s
-  }
-
-  .loadBGFade-enter-done {
-    opacity: .8;
-  }
-
-  .loadBGFade-exit {
-    opacity: .8;
-  }
-
-  .loadBGFade-exit-active {
-    opacity: 0;
-    transition: opacity 1s
-  }
-
-  // Loader
-  .loadFade-enter {
-    opacity: 0;
-  }
-
-  .loadFade-enter-active {
-    opacity: 1;
-    transition: opacity .5s
-  }
-
-  .loadFade-exit {
-    opacity: 1;
-  }
-
-  .loadFade-exit-active {
-    opacity: 0;
-    transition: opacity .5s
-  }
-
-  // Movie Card
-  .cardLoadFade-enter {
-    opacity: 0;
-  }
-
-  .cardLoadFade-enter-active,
-  .cardLoadFade-enter-done {
-    opacity: 1;
   }
 
   .movieGrid {
