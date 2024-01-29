@@ -102,7 +102,7 @@ const App = () => {
   const MovieGrid = () => {
     simpleBackCB(null)
 
-    const pageNav = (bottom = false) => {
+    const pageNav = () => {
       const prevValid = (page.current > 1),
             nextValid = (page.current < pageTotal.current),
             prevPage = !prevValid ? "" : "< previous page",
@@ -110,7 +110,7 @@ const App = () => {
       const clickAction = (activate, val = 0) => {
         if (activate) {
           page.current = page.current + val
-          if (bottom) { window.scrollTo(0, 0) }
+          window.scrollTo(0, 0)
           setApiData([])
           getList(page)
         }
