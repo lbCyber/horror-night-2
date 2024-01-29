@@ -15,7 +15,6 @@ const App = () => {
         [languages] = useState(Languages),
         [review, setReview] = useState({}),
         [back, setBack] = useState(null),
-        backFadeOut = useRef(false),
         pageTotal = useRef(0),
         page = useRef(1)
 
@@ -30,20 +29,14 @@ const App = () => {
   },[])
 
   const bgCallBack = useCallback((bg) => {
-    console.log("back is running")
     if (window.innerWidth > 768) {
       setBack(bg)
-      setTimeout(() => {
-        backFadeOut.current = false
-        console.log(`backfadeout kicked in ${bg}`)
-      }, 1000)
     }
   },[])
 
   const simpleBackCB = useCallback((bg) => {
     setTimeout(()=>{
       setBack(bg)
-      backFadeOut.current = false
     }, 10)
   },[back])
 
@@ -143,7 +136,7 @@ const App = () => {
           {
             apiData.map((movie, key) => {
               return (
-                <MovieCard moviePick={movie} key={key} language={pickLanguage(movie.original_language)} cardNumber={key} ready={backFadeOut.current === false && back === null} reviewData={review[movie.id]} backDrop={bgCallBack} />
+                <MovieCard moviePick={movie} key={key} language={pickLanguage(movie.original_language)} cardNumber={key} reviewData={review[movie.id]} backDrop={bgCallBack} />
                 )
               })
             }

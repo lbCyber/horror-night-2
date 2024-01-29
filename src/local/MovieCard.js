@@ -1,14 +1,17 @@
-import { useState, useEffect, useRef } from 'react';
+import { useState, useEffect } from 'react';
 import { CSSTransition } from 'react-transition-group';
 import { Link } from "react-router-dom";
 
-const MovieCard = ({moviePick, language, cardNumber, ready, reviewData, backDrop}) => {
+const MovieCard = ({moviePick, language, cardNumber, reviewData}) => {
 
   const [loaded, setIsLoaded] = useState(false),
         [paulRank, setPaulRank] = useState(0),
         [kyleRank, setKyleRank] = useState(0)
 
+  const mobileCheck = (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent))
+
   useEffect(()=>{
+    console.log(window)
     const reviewsum = (arr) => Object.values(arr).reduce((a, b) => a + b, 0) // Simple adder for paulRank and kyleRank
     setPaulRank(reviewsum(reviewData.reviews["Paul"]))
     setKyleRank(reviewsum(reviewData.reviews["Kyle"]))
@@ -40,7 +43,7 @@ const MovieCard = ({moviePick, language, cardNumber, ready, reviewData, backDrop
                     <h4 className="green">{`Rating: ${paulRank + kyleRank}/10`}</h4>
                     : <h4 className="red">{`Rating: ${paulRank + kyleRank}/10`}</h4>
                   }
-                  <h5>Click for review</h5>
+                  <h5>{mobileCheck ? "Tap" : "Click"} for review</h5>
                 </div>
               </figcaption>
             </Link>

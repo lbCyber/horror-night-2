@@ -149,7 +149,9 @@
     width: calc(100% - 60px);
     display: flex;
     justify-content: space-around;
+    margin: 0 auto;
     p {
+      text-align: center;
       display: block;
       width: 130px;
       color: #FB5;
