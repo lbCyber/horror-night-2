@@ -6,6 +6,7 @@ import axios from 'axios';
 import Footer from './local/Footer'
 import Header from './local/Header'
 import Languages from './json/languages'
+import LoadingModal from './local/Loading'
 import Movie from './local/Movie'
 import MovieCard from './local/MovieCard'
 
@@ -15,6 +16,7 @@ const App = () => {
         [languages] = useState(Languages),
         [review, setReview] = useState({}),
         [back, setBack] = useState(null),
+        [isLoading, setIsLoading] = useState(true),
         pageTotal = useRef(0),
         page = useRef(1)
 
@@ -79,6 +81,7 @@ const App = () => {
   }
 
   const getList = useCallback((page) => {
+    setIsLoading(true)
     axios({ // Get our local review data
       url: './json/reviews.json',
       method: 'GET',
@@ -100,6 +103,8 @@ const App = () => {
       }).then(response => {
         pageTotal.current = response.data.total_pages
         setApiData(response.data.items)
+      }).finally(()=>{
+        setIsLoading(false)
       })
     }).catch(error => {  // If nothing matched, something went wrong on your end!
       warningFire(`Something went wrong on our end! Please wait a moment, and try your search again!`)
@@ -115,6 +120,7 @@ const App = () => {
       <>
         <div className={`backDrop${(back !== null) ? " loadBGFade-enter-done" : null}`} style={{ backgroundImage: `radial-gradient(transparent, #000), url("${back}")` }}></div>
         <Header backDrop={bgCallBack} />
+        {isLoading ? <LoadingModal /> : null}
         <main>
           <div className="wrapper">
             <Outlet />
@@ -125,6 +131,7 @@ const App = () => {
   }
 
   const MovieGrid = () => {
+    simpleBackCB(null)
     return (
       <>
         <div className="headerBlurb">

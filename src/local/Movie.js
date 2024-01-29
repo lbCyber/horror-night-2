@@ -95,10 +95,7 @@ const Movie = ({moviePick, movieReviews, backDrop, languages}) => {
   return (
     <article className="moviePage">
       <div>
-        <p onMouseUp={(e) => {
-          if (e.button === 0) {
-            backDrop(null, true)
-          }}}>
+        <p>
           <Link className="goBack clickable" to="/" relative="path">&gt; Return to the main menu</Link>
         </p>
       </div>
@@ -156,10 +153,7 @@ const Movie = ({moviePick, movieReviews, backDrop, languages}) => {
         </div>
       </section>
       <div>
-        <p onMouseUp={(e) => {
-          if (e.button === 0) {
-            backDrop(null, true)
-          }}}>
+        <p>
           <Link className="goBack clickable" to="/" relative="path">&gt; Return to the main menu</Link>
         </p>
       </div>

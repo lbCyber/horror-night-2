@@ -11,7 +11,6 @@ const MovieCard = ({moviePick, language, cardNumber, reviewData}) => {
   const mobileCheck = (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent))
 
   useEffect(()=>{
-    console.log(window)
     const reviewsum = (arr) => Object.values(arr).reduce((a, b) => a + b, 0) // Simple adder for paulRank and kyleRank
     setPaulRank(reviewsum(reviewData.reviews["Paul"]))
     setKyleRank(reviewsum(reviewData.reviews["Kyle"]))
