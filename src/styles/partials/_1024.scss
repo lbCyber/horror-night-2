@@ -10,6 +10,7 @@
     &:hover {
       box-shadow:none;
       background-color: rgba(66,66,66,.66);
+      transform: unset;
     }
   }
   .backDrop {
@@ -63,6 +64,8 @@
     width: 100%;
     flex-basis: calc(65% - 20px);
     justify-content: space-between;
+  }
+  .deetTopInfo {
     margin-top: auto;
   }
   .pkReviews {

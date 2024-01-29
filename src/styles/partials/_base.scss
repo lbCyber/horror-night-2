@@ -155,7 +155,7 @@
       display: block;
       width: 130px;
       color: #FB5;
-      margin: 0 20px;
+      margin: 20px;
       &:hover {
         color: #FFF;
       }
@@ -216,7 +216,6 @@
   .cardLoadFade-enter-active,
   .cardLoadFade-enter-done {
     opacity: 1;
-    transition: opacity 1s, background-color .3s, box-shadow .3s;
   }
 
   .movieGrid {

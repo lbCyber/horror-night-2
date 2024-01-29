@@ -12,6 +12,7 @@
   border-radius: 2px;
   height: 100%;
   opacity: 0;
+  transition: .4s .075s all;
   &:hover figcaption {
     opacity: 1;
   }
@@ -27,6 +28,7 @@
     box-shadow: 0 0 0 1px #fff;
     background-color: rgba(99, 99, 99, .99);
     opacity: 1 !important;
+    transform: scale(1.025);
   }
 }
 

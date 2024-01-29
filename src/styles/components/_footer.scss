@@ -4,16 +4,16 @@ footer {
   bottom: 0;
   color: #ccc;
   display: flex !important;
-  font-size: .9rem;
+  font-size: .95rem;
   justify-content: center;
-  letter-spacing: 0.5rem;
+  letter-spacing: 0.25rem;
   overflow: hidden;
   padding: 12px 0;
   text-transform: uppercase;
   width: 100%;
   z-index: 999;
   background-color: rgba(66, 66, 66, .8);
-  height: 24px;
+  height: 35px;
   position: relative;
   transition: padding 0.5s, height 0.5s, background-color 0.5s, color 0.5s;
   p {
@@ -24,6 +24,7 @@ footer {
   a {
     color: $lightBlue;
     text-decoration: underline;
+    letter-spacing: 0.2rem;
     transition: color 0.5s;
     &:hover {
       color: #fff;
