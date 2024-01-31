@@ -87,7 +87,11 @@ const App = () => {
   const IndexContent = () => {
     return (
       <>
-        <div className="backDrop" style={{ backgroundImage: `radial-gradient(transparent, #000), url("${back}")` }}></div>
+        <div
+          className="backDrop"
+          style={{
+            backgroundImage: `radial-gradient(transparent, #000), url("${back}")`
+          }}></div>
         <Header backDrop={bgCallBack} />
         {isLoading ? <LoadingModal /> : null}
         <main>
@@ -117,17 +121,21 @@ const App = () => {
       }
       return (
         <>
-          <p className={`page${(prevPage !== "") ? " clickable" : " noClick"}`} onMouseUp={(e) => {
-            if (e.button === 0) {
-              clickAction(prevValid, -1)
-            }}}>
-            {prevPage}
+          <p
+            className={`page${(prevPage !== "") ? " clickable" : " noClick"}`}
+            onMouseUp={(e) => {
+              if (e.button === 0) {
+                clickAction(prevValid, -1)
+              }}}>
+            { prevPage }
           </p>
-          <p className={`page${(nextPage !== "") ? " clickable" : " noClick"}`} onMouseUp={(e) => {
-            if (e.button === 0) {
-              clickAction(nextValid, 1)
-            }}}>
-            {nextPage}
+          <p
+            className={`page${(nextPage !== "") ? " clickable" : " noClick"}`}
+            onMouseUp={(e) => {
+              if (e.button === 0) {
+                clickAction(nextValid, 1)
+              }}}>
+            { nextPage }
           </p>
         </>
       )
@@ -139,35 +147,50 @@ const App = () => {
           <h4>For every month for over five years, two best friends have gotten together to find a new horror-themed movie to review, with an eye for overlooked gems or overrated trash.</h4>
           <h4>Explore the site to discover movies that might interest you! Everything is rated based on five criteria: Enjoyability, Success, Memorability, Recommendability, and Rewatchability. We'll also provide our post-movie discussion on what we thought of the film.</h4>
         </div>
-        <div className="pages">{ pageNav() }</div>
+        <div className="pages">
+          { pageNav() }
+        </div>
         <div className="movieGrid">
           {
             apiData.map((movie, key) => {
               return (
-                <MovieCard moviePick={movie} key={key} language={pickLanguage(movie.original_language)} cardNumber={key} reviewData={review[movie.id]}  />
-                )
-              })
-            }
+                <MovieCard
+                  moviePick={movie}
+                  key={key}
+                  language={pickLanguage(movie.original_language)}
+                  cardNumber={key}
+                  reviewData={review[movie.id]} />
+              )
+            })
+          }
         </div>
-        <div className="pages">{ pageNav(true) }</div>
+        <div className="pages">
+          { pageNav() }
+        </div>
       </>
     )
   }
 
   return (
-    <HashRouter basename="/">
+    <HashRouter>
       <Routes>
         <Route element={<IndexContent />}>
           <Route index element={<MovieGrid />} />
           {
             apiData.map((movie, key) => {
               return (
-                <Route path={`/${movie.id}`} key={key} element={
-                  <Movie moviePick={movie} movieReviews={review[movie.id]} backDrop={simpleBackCB} languages={languages} />
-                } />
-                )
-              })
-            }
+                <Route
+                  path={`/${movie.id}`}
+                  key={key} element={
+                    <Movie
+                      moviePick={movie}
+                      movieReviews={review[movie.id]}
+                      backDrop={simpleBackCB}
+                      languages={languages} />
+                  } />
+              )
+            })
+          }
         </Route>
       </Routes>
       <Footer />
