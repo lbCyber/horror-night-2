@@ -1,7 +1,9 @@
-import { useEffect, useState } from 'react';
+import {
+  useEffect,
+  useState } from 'react';
+import { Link } from "react-router-dom";
 import axios from 'axios';
 import nl2br from 'react-newline-to-break';
-import { Link } from "react-router-dom";
 
 const Movie = ({moviePick, movieReviews, backDrop, languages}) => {
 
@@ -13,8 +15,8 @@ const Movie = ({moviePick, movieReviews, backDrop, languages}) => {
   useEffect(()=>{
     backDrop(`https://image.tmdb.org/t/p/w1280${moviePick.backdrop_path}`)
     // Please random user, stop changing the language for one movie to Persian in en-US
-    const langCompare = (language) => language.iso_639_1 === moviePick.original_language;
-    const output = languages.find(langCompare);
+    const langCompare = (language) => language.iso_639_1 === moviePick.original_language,
+          output = languages.find(langCompare);
     setLanguage(output["english_name"])
 
     axios({
@@ -24,8 +26,8 @@ const Movie = ({moviePick, movieReviews, backDrop, languages}) => {
       headers: { Authorization: process.env.REACT_APP_API_AUTH },
       language: `"${moviePick.original_language}"`
     }).then(response => {
-      const findYouTube = (v) => (v.site === "YouTube" && v.type === "Trailer")
-      const youTubeTrailer = response.data.results.find(findYouTube)
+      const findYouTube = (v) => (v.site === "YouTube" && v.type === "Trailer"),
+            youTubeTrailer = response.data.results.find(findYouTube)
 
       if (youTubeTrailer.key === "6qCqrODw1nM") { // Babysitter default vid is... uh...
         setVideo("CQTEUd-5JMQ")
@@ -85,8 +87,19 @@ const Movie = ({moviePick, movieReviews, backDrop, languages}) => {
         yesno: movieReviews.reviews[p][i.keyName]
     }))
     return criteria.map((i,k)=>(
-      <li key={k} onMouseOver={() => { blurbHover(k, p) }} onMouseLeave={() => { blurbHover(null) }}>
-        {(i.yesno) ? <img src="./assets/yes.png" alt={`${p} found the movie ${i.criteria}`} /> : <img src="./assets/no.png" alt={`${p} didn't find the movie ${i.criteria}`} />}
+      <li
+        key={k}
+        onMouseOver={() => { blurbHover(k, p) }}
+        onMouseLeave={() => { blurbHover(null) }}>
+        {
+          (i.yesno) ?
+            <img
+              src="./assets/yes.png"
+              alt={`${p} found the movie ${i.criteria}`} /> :
+            <img
+              src="./assets/no.png"
+              alt={`${p} didn't find the movie ${i.criteria}`} />
+        }
         <h6>{i.Criteria}</h6>
       </li>
     ))
@@ -96,21 +109,50 @@ const Movie = ({moviePick, movieReviews, backDrop, languages}) => {
     <article className="moviePage">
       <div>
         <p>
-          <Link className="goBack clickable" to="/" relative="path">&gt; Return to the main menu</Link>
+          <Link
+            className="goBack clickable"
+            to="/"
+            relative="path">
+            &gt; Return to the main menu
+          </Link>
         </p>
       </div>
       <section className="moviePageInfo">
-        <h2>{(moviePick.title === "زیر سایه") ? "Under the Shadow" : `${moviePick.title}`} ({moviePick.release_date.slice(0, 4)})</h2>
+        <h2>{
+          (moviePick.title === "زیر سایه") ?
+            "Under the Shadow" :
+            `${moviePick.title}`
+          } ({ moviePick.release_date.slice(0, 4) })</h2>
         <div className="movieInfoContainer">
-          <img className="moviePagePoster" src={`https://image.tmdb.org/t/p/w600_and_h900_bestv2/${moviePick.poster_path}`} alt={`Movie poster for ${moviePick.title}`} />
+          <img
+            className="moviePagePoster"
+            src={`https://image.tmdb.org/t/p/w600_and_h900_bestv2/${moviePick.poster_path}`}
+            alt={`Movie poster for ${moviePick.title}`} />
           <div className="trailer">
-            <iframe className="trailerFrame" title={`Trailer for ${moviePick.title}`} src={`https://www.youtube-nocookie.com/embed/${video}`} frameBorder="0" allow="accelerometer; encrypted-media; gyroscope; picture-in-picture" allowFullScreen={true} modestbranding="true"></iframe>
+            <iframe
+              className="trailerFrame"
+              title={`Trailer for ${moviePick.title}`}
+              src={`https://www.youtube-nocookie.com/embed/${video}`}
+              frameBorder="0"
+              allow="accelerometer; encrypted-media; gyroscope; picture-in-picture"
+              allowFullScreen={true}
+              modestbranding="true"></iframe>
           </div>
           <div className="deetTopInfo movieDeets">
-            <p><span className="deetHeader">Language: </span> {language}</p>
-            <p><span className="deetHeader"><a href={`https://www.themoviedb.org/movie/${moviePick.id}`} target="_blank" rel="noopener noreferrer">TMDB Rating:</a> </span> {moviePick.vote_average.toFixed(1)} ({moviePick.vote_count} votes)</p>
+            <p>
+              <span className="deetHeader">Language: </span> {language}
+            </p>
+            <p>
+              <span className="deetHeader">
+                <a
+                  href={`https://www.themoviedb.org/movie/${moviePick.id}`}
+                  target="_blank"
+                  rel="noopener noreferrer">TMDB Rating:</a> </span> {moviePick.vote_average.toFixed(1)} ({moviePick.vote_count} votes)</p>
           </div>
-          <div className="movieOverview movieDeets"><p className="deetHeader overviewHeader">Overview: </p> <p className="overviewText">{moviePick.overview}</p></div>
+          <div className="movieOverview movieDeets">
+            <p className="deetHeader overviewHeader">Overview: </p>
+            <p className="overviewText">{moviePick.overview}</p>
+          </div>
         </div>
       </section>
       <section className="pkReviews">
@@ -129,32 +171,45 @@ const Movie = ({moviePick, movieReviews, backDrop, languages}) => {
           </div>
         </div>
         <div className="reviewToolTip">
-          {(hover !== null && hover !== undefined) ?
-            <div className="reviewToolTipContent hoverToolTip" aria-hidden>
-              <h5>{hover["criteria"]}</h5>
-              <p>{nl2br(hover["blurb"])}</p>
-              {(movieReviews.reviews[hoverReviewer][hover["keyName"]]) ?
-                <p className="green">{hoverReviewer} found {moviePick.title} {hover["criteriaShort"]}</p>
-                : <p className="red">{hoverReviewer} did not find {moviePick.title} {hover["criteriaShort"]}</p>
-              }
-            </div>
-            : null}
+          {
+            (hover !== null && hover !== undefined) ?
+              <div className="reviewToolTipContent hoverToolTip" aria-hidden>
+                <h5>{hover["criteria"]}</h5>
+                <p>{nl2br(hover["blurb"])}</p>
+                {
+                  (movieReviews.reviews[hoverReviewer][hover["keyName"]]) ?
+                    <p className="green">
+                      {hoverReviewer} found {moviePick.title} {hover["criteriaShort"]}
+                    </p> :
+                    <p className="red">
+                      {hoverReviewer} did not find {moviePick.title} {hover["criteriaShort"]}
+                    </p>
+                }
+              </div> :
+            null
+          }
           <div className="reviewToolTipContent noHoverToolTip">
             <h2 className="legend">Legend</h2>
-            {reviewBlurb.map((movieCriteria, key) => {
-              return (
-                <div className="noHoverCriteria" key={key}>
-                  <h4>{movieCriteria["criteria"]}</h4>
-                  <p>{nl2br(movieCriteria["blurb"])}</p>
-                </div>
-              )
-            })}
+            {
+              reviewBlurb.map((movieCriteria, key) => {
+                return (
+                  <div className="noHoverCriteria" key={key}>
+                    <h4>{movieCriteria["criteria"]}</h4>
+                    <p>{nl2br(movieCriteria["blurb"])}</p>
+                  </div>
+              )}
+            )}
           </div>
         </div>
       </section>
       <div>
         <p>
-          <Link className="goBack clickable" to="/" relative="path">&gt; Return to the main menu</Link>
+          <Link
+            className="goBack clickable"
+            to="/"
+            relative="path">
+              &gt; Return to the main menu
+          </Link>
         </p>
       </div>
     </article>

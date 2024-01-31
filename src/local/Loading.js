@@ -1,5 +1,3 @@
-import React from 'react'
-
 const LoadingModal = () => {
   return (
     <div className="modalLoading">
@@ -21,9 +19,10 @@ const LoadingModal = () => {
           <div className="barLoading bar14Loading"></div>
           <div className="barLoading bar15Loading"></div>
         </div>
-        <p className="textLoading">Loading <span className="dotLoading dot1Loading">. </span><span
+        <p className="textLoading">
+          Loading <span className="dotLoading dot1Loading">. </span><span
           className="dotLoading dot2Loading">. </span><span className="dotLoading dot3Loading">.
-        </span>
+          </span>
         </p>
       </div>
     </div>

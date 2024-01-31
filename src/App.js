@@ -1,14 +1,22 @@
-import './styles/app.scss'
-import { useEffect, useState, useCallback, useRef } from 'react';
-import { HashRouter, Routes, Route, Outlet } from "react-router-dom";
+import './styles/app.scss';
+import {
+  useEffect,
+  useState,
+  useCallback,
+  useRef } from 'react';
+import {
+  HashRouter,
+  Routes,
+  Route,
+  Outlet } from "react-router-dom";
 import Swal from 'sweetalert2';
 import axios from 'axios';
-import Footer from './local/Footer'
-import Header from './local/Header'
-import Languages from './json/languages'
-import LoadingModal from './local/Loading'
-import Movie from './local/Movie'
-import MovieCard from './local/MovieCard'
+import Footer from './local/Footer';
+import Header from './local/Header';
+import Languages from './json/languages';
+import LoadingModal from './local/Loading';
+import Movie from './local/Movie';
+import MovieCard from './local/MovieCard';
 
 const App = () => {
 
@@ -30,12 +38,6 @@ const App = () => {
     })
   },[])
 
-  const bgCallBack = (bg) => {
-    if (window.innerWidth > 768) {
-      setBack(bg)
-    }
-  }
-
   const simpleBackCB = (bg) => {
     setTimeout(()=>{
       setBack(bg)
@@ -44,8 +46,8 @@ const App = () => {
 
   const pickLanguage = (lang) => {
     //Return true/false if language exists in json file
-    const langCompare = (language) => language.iso_639_1 === lang;
-    const output = languages.find(langCompare); //Find the language
+    const langCompare = (language) => language.iso_639_1 === lang,
+          output = languages.find(langCompare); //Find the language
     return `${output["english_name"]}` //Return English name
   }
 
@@ -82,7 +84,7 @@ const App = () => {
 
   useEffect(()=>{
     getList(page.current);
-  },[page])
+  },[getList, page])
 
   const IndexContent = () => {
     return (
@@ -92,8 +94,8 @@ const App = () => {
           style={{
             backgroundImage: `radial-gradient(transparent, #000), url("${back}")`
           }}></div>
-        <Header backDrop={bgCallBack} />
-        {isLoading ? <LoadingModal /> : null}
+        <Header />
+        { isLoading ? <LoadingModal /> : null }
         <main>
           <div className="wrapper">
             <Outlet />
@@ -181,7 +183,8 @@ const App = () => {
               return (
                 <Route
                   path={`/${movie.id}`}
-                  key={key} element={
+                  key={key}
+                  element={
                     <Movie
                       moviePick={movie}
                       movieReviews={review[movie.id]}
