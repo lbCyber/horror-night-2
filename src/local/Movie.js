@@ -134,7 +134,6 @@ const Movie = ({moviePick, movieReviews, backDrop, languages}) => {
               title={`Trailer for ${moviePick.title}`}
               src={`https://www.youtube-nocookie.com/embed/${video}`}
               frameBorder="0"
-              allow="accelerometer; encrypted-media; gyroscope; picture-in-picture"
               allowFullScreen={true}
               modestbranding="true"></iframe>
           </div>

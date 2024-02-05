@@ -74,7 +74,7 @@ const MovieCard = ({moviePick, language, cardNumber, reviewData}) => {
             rel="noopener noreferrer">
             TMDB Rating:
           </a>
-          { moviePick.vote_average.toFixed(1) }/10
+          {` ${moviePick.vote_average.toFixed(1)}/10 `}
         </h6>
       </figure>
     </>

@@ -78,7 +78,7 @@ const App = () => {
         setIsLoading(false)
       })
     }).catch(error => {  // If nothing matched, something went wrong on your end!
-      warningFire(`Something went wrong on our end! Please wait a moment, and try your search again!`)
+      warningFire(`Something went wrong on our end! Please wait a moment, and try your search again! - ${toString(error)}`)
     })
   },[setReview, setApiData, warningFire])
 
@@ -91,7 +91,7 @@ const App = () => {
       <>
         <div
           className="backDrop"
-          style={{
+          style={{ // Background element using backdrop image from tmdb.org
             backgroundImage: `radial-gradient(transparent, #000), url("${back}")`
           }}></div>
         <Header />
@@ -107,18 +107,17 @@ const App = () => {
 
   const MovieGrid = () => {
     simpleBackCB(null)
-
     const pageNav = () => {
-      const prevValid = (page.current > 1),
-            nextValid = (page.current < pageTotal.current),
+      const prevValid = (page.current > 1), // Check if can go back 1 page
+            nextValid = (page.current < pageTotal.current), // Check if can go forward 1 page
             prevPage = !prevValid ? "" : "< previous page",
             nextPage = !nextValid ? "" : "next page >"
       const clickAction = (activate, val = 0) => {
         if (activate) {
           page.current = page.current + val
-          window.scrollTo(0, 0)
           setApiData([])
           getList(page)
+          window.scrollTo(0, 0)
         }
       }
       return (
