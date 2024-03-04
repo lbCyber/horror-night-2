@@ -9,7 +9,6 @@ import {
   Routes,
   Route,
   Outlet } from "react-router-dom";
-import Swal from 'sweetalert2';
 import axios from 'axios';
 import Footer from './local/Footer';
 import Header from './local/Header';
@@ -27,16 +26,6 @@ const App = () => {
         [isLoading, setIsLoading] = useState(true),
         pageTotal = useRef(0),
         page = useRef(1)
-
-
-  const warningFire = useCallback((warning) => {
-    Swal.fire({
-      title: 'Oops!',
-      text: warning,
-      type: 'error',
-      confirmButtonText: 'Okay'
-    })
-  },[])
 
   const simpleBackCB = (bg) => {
     setTimeout(()=>{
@@ -78,9 +67,9 @@ const App = () => {
         setIsLoading(false)
       })
     }).catch(error => {  // If nothing matched, something went wrong on your end!
-      warningFire(`Something went wrong on our end! Please wait a moment, and try your search again! - ${toString(error)}`)
+      console.log(`Something went wrong on our end! Please wait a moment, and try your search again! - ${toString(error)}`)
     })
-  },[setReview, setApiData, warningFire])
+  },[setReview, setApiData])
 
   useEffect(()=>{
     getList(page.current);
